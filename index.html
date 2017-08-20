@@ -69,6 +69,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-phd分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/phd分析/" class="article-date">
+  <time datetime="2017-08-20T05:10:13.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/phd分析/">博士数据分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>参考清华大学的 <a href="http://www.tsinghua.edu.cn/publish/yjsy/698/2010/20101216105103164308914/20101216105103164308914_.html" target="_blank" rel="external">授予学位情况</a> ：</strong><br>    自1978年恢复学位制度至2016年10月，清华大学已授予硕士和博士学位95243人，其中博士学位16496人、硕士学位78747人（含专业硕士学位33826人）。此外，经国务院学位委员会批准，我校授予23人名誉博士学位。</p>
+<p>一、历年授予博士学位情况</p>
+<p><img src="http://www.tsinghua.edu.cn/publish/yjsy/698/20101216105103164308914/1493373961300.jpg" alt=""></p>
+<p><em>最近两年（15、16年）大概是分别1400±50人</em></p>
+<p>二、历年授予硕士学位情况</p>
+<p>三、博士学位获得者在各学科门类的分布情况</p>
+<p><img src="http://www.tsinghua.edu.cn/publish/yjsy/698/20101216105103164308914/1493373961300.jpg" alt=""></p>
+<p><em>工学大概11.5k人，理学大概1.9k人</em></p>
+<p>四、硕士学位获得者在各学科门类的分布情况</p>
+<p>五、专业硕士学位获得者在各专业类别的分布情况</p>
+<p><strong>在此格式上，对已有数据进行类似的整理。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/phd分析/" data-id="cj6kaic2v00003oulio4u1j15" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-diary-170820" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/20/diary-170820/" class="article-date">
@@ -113,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/diary-170820/" data-id="cj6k59xdu0000wwulnxgas6zx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/diary-170820/" data-id="cj6kabb560000t4ulv1lz1k02" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
@@ -139,7 +188,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+      <a class="article-title" href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士学位分析-2</a>
     </h1>
   
 
@@ -194,9 +243,9 @@ new_sheet=new_workbook.add_sheet(<span class="string">"phd_data"</span>,cell_ove
             pattern_t2 = <span class="string">r'&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}" align="center"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
             pattern_t3 = <span class="string">r'&lt;/font&gt;&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
 
-            m_t1 = re.findall(pattern_t1,data)      <span class="comment">#学号</span>
-            m_t2 = re.findall(pattern_t2,data)     <span class="comment">#时间     </span>
-            m_t3 = re.findall(pattern_t3,data)  <span class="comment">#以下是包含所需数字的字符串，需要再选</span>
+            m_t1 = re.findall(pattern_t1,data)      
+            m_t2 = re.findall(pattern_t2,data)         
+            m_t3 = re.findall(pattern_t3,data)  
 
             n=[]                                  <span class="comment">#拼一个list出来，再写入m作为二维list中的一项</span>
             n.append(num)
@@ -226,10 +275,10 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6k59xec0009wwulpi553hw4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6kabb5u000dt4ulz1f5521x" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
 
     </footer>
   </div>
@@ -252,7 +301,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+      <a class="article-title" href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士学位分析-1</a>
     </h1>
   
 
@@ -266,7 +315,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
 <li>图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获;</li>
 <li><p>也可以用PIL等工具进行后续分析处理.</p>
 <p>  通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫变的有意义。</p>
-<p>  实际选择的是某大学的博士生的毕业时间。看看如今博士延期的具体比例。原理很简单，通过抓取所有博士生在线答辩公告，对比学号和答辩日期。同时，实际上也可以得到很多其他有意思的信息。由于</p>
+<p>  实际选择的是某大学的博士生情况。看看如今博士延期的具体比例。原理很简单，通过抓取所有博士生在线答辩公告，对比学号和答辩日期。同时，实际上也可以得到很多其他有意思的信息。由于</p>
 <p>  学校公告不会一直保留，所以第一步是把答辩公告全部抓到本地，并不断增量更新。有前面的爬虫练手，这个抓取是很好写的。</p>
 </li>
 </ul>
@@ -275,10 +324,10 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata1/" data-id="cj6k59xeb0008wwull3rxwzit" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata1/" data-id="cj6kabb5t000at4ul7tojyx3e" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
 
     </footer>
   </div>
@@ -388,7 +437,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/python爬虫-mmjpg/" data-id="cj6k59xe90005wwul1sv5vdcl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/python爬虫-mmjpg/" data-id="cj6kabb5p0009t4ul6vhh0quw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
@@ -427,7 +476,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/python爬虫-meizitu/" data-id="cj6k59xe60004wwule17o6l0a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/python爬虫-meizitu/" data-id="cj6kabb5k0005t4ulkdfbq5qx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
@@ -485,7 +534,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cj6k59xe40003wwulpjpi2wcn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cj6kabb5i0004t4ulzz7jok4y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -596,7 +645,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
 <h2 id="关于收费"><a href="#关于收费" class="headerlink" title="关于收费"></a>关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x68;&#x75;&#x73;&#x74;&#103;&#x6f;&#99;&#x6b;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x68;&#x75;&#x73;&#x74;&#103;&#x6f;&#99;&#x6b;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#104;&#x75;&#115;&#x74;&#x67;&#x6f;&#x63;&#107;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#104;&#x75;&#115;&#x74;&#x67;&#x6f;&#x63;&#107;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
@@ -605,7 +654,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cj6k59xgs000vwwulmmazqoos" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cj6kabb5g0003t4ulu33y8g0r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -642,7 +691,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cj6k59xgf000swwul7xs774um" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cj6kabb64000gt4ul5z5hfwo3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -672,52 +721,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cj6k59xga000rwwuljesvy278" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/18/hello-world/" class="article-date">
-  <time datetime="2017-08-18T09:14:53.850Z" itemprop="datePublished">2017-08-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/18/hello-world/" data-id="cj6k59xe00001wwuliudbc5x9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cj6kabb5w000et4ulxjbhvtac" class="article-share-link">Share</a>
       
       
     </footer>
@@ -728,6 +732,10 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -739,7 +747,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
   </div>
 
@@ -749,7 +757,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 15px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
     </div>
   </div>
 
@@ -771,23 +779,23 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       <ul>
         
           <li>
+            <a href="/2017/08/20/phd分析/">博士数据分析</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/20/diary-170820/">汇总一下现有学习内容和进展</a>
           </li>
         
           <li>
-            <a href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+            <a href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士学位分析-2</a>
           </li>
         
           <li>
-            <a href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+            <a href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士学位分析-1</a>
           </li>
         
           <li>
             <a href="/2017/08/19/python爬虫-mmjpg/">python爬虫-mmjpg</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/19/python爬虫-meizitu/">python爬虫-meizitu</a>
           </li>
         
       </ul>
