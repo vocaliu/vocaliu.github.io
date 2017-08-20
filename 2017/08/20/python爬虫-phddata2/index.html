@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python爬虫-博士究竟要读多久-2 | 自学编程记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。 导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。 12345678910111213141516171819202122232425262728293031323">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫-博士究竟要读多久-2">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/python爬虫-phddata2/index.html">
+<meta property="og:site_name" content="自学编程记录">
+<meta property="og:description" content="抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。 导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。 12345678910111213141516171819202122232425262728293031323">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-20T03:02:08.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python爬虫-博士究竟要读多久-2">
+<meta name="twitter:description" content="抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。 导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。 12345678910111213141516171819202122232425262728293031323">
+  
+    <link rel="alternate" href="/atom.xml" title="自学编程记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自学编程记录</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">人生苦短 我选python</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python爬虫-phddata2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/python爬虫-phddata2/" class="article-date">
+  <time datetime="2017-08-20T02:20:53.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫-博士究竟要读多久-2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。
+导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Wed Aug 16 09:38:29 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version: Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"></div><div class="line"><span class="comment">#初始化部分    </span></div><div class="line">m=[]                                                   <span class="comment">#建立一个二维数组，设置第一项相当于标题栏</span></div><div class="line">n0=[<span class="string">'学号'</span>,<span class="string">'答辩时间'</span>,<span class="string">'姓名'</span>,<span class="string">'院系'</span>,<span class="string">'专业'</span>,<span class="string">'论文题目'</span>,<span class="string">'答辩地点'</span>,<span class="string">'主席'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员2'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员3'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员4'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员5'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'答辩秘书'</span>]</div><div class="line">m.append(n0)                                          <span class="comment">#把n0写进m里做m[0]</span></div><div class="line">numstart = <span class="number">1</span></div><div class="line">numstop = <span class="number">2</span>                                           <span class="comment">#具体数值就不写了</span></div><div class="line">hangshu = <span class="number">1</span>                                           <span class="comment">#m列表的第一行写成n0有个自制的标题行，实际数据量=行数-1；引用数据时编号从0开始，注意行数要减</span></div><div class="line">new_workbook=xlwt.Workbook()                          <span class="comment">#新建一个xls格式的excel并打开一个sheet</span></div><div class="line">new_sheet=new_workbook.add_sheet(<span class="string">"phd_data"</span>,cell_overwrite_ok=<span class="keyword">True</span>)  </div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">23</span>):</div><div class="line">    new_sheet.write(<span class="number">0</span>,i,m[<span class="number">0</span>][i])                      <span class="comment">#把m的第一项(m[0])写入excel的第一行(行号为0)</span></div><div class="line"></div><div class="line"><span class="comment">#循环抓内容</span></div><div class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):    </div><div class="line">    filename = <span class="string">'F:\phddbjl\&#123;&#125;.htm'</span>.format(num)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">with</span> open(<span class="string">'&#123;&#125;'</span>.format(filename),<span class="string">'rb'</span>) <span class="keyword">as</span> fp: </div><div class="line">            data = fp.read()</div><div class="line">            data = data.decode(<span class="string">"gbk"</span>)               <span class="comment">#改变编码从二进制变成显示中文</span></div><div class="line">            data = repr(data)                       <span class="comment">#字符化，有没有似乎没影响</span></div><div class="line">            pattern = <span class="string">r'[\u4e00-\u9fa5]+\S*[\u4e00-\u9fa5]+'</span>         <span class="comment">#抓出由中文字符开始和结束的连续字符串</span></div><div class="line">            pattern = re.compile(pattern)          <span class="comment">#有没有似乎没影响</span></div><div class="line">            pattern_time = <span class="string">r'\d&#123;4&#125;\-\d&#123;1,2&#125;\-\d&#123;1,2&#125;'</span></div><div class="line">            pattern_xh = <span class="string">r'D[FGZ]\d&#123;7&#125;'</span>             <span class="comment">#df dg dz三种学号格式</span></div><div class="line">            m_zw = re.findall(pattern,data)         <span class="comment">#得到所有2个以上连续的中文字符,院系m3,专业m4,姓名m5，题目m7，答辩地点m27</span></div><div class="line">            m_xh = re.findall(pattern_xh,data)      <span class="comment">#学号</span></div><div class="line">            m_sj = re.findall(pattern_time,data)     <span class="comment">#时间     </span></div><div class="line">            n=[]                                  <span class="comment">#拼一个list出来，再写入m作为二维list中的一项</span></div><div class="line">            n.append(m_xh[<span class="number">0</span>])                        <span class="comment">#按顺序包含['学号','姓名','院系','专业','论文题目','答辩时间']</span></div><div class="line">            n.append(m_sj[<span class="number">0</span>])</div><div class="line">            n.append(m_zw[<span class="number">5</span>])</div><div class="line">            n.append(m_zw[<span class="number">3</span>])</div><div class="line">            n.append(m_zw[<span class="number">4</span>])</div><div class="line">            n.append(m_zw[<span class="number">7</span>])</div><div class="line">            n.append(m_zw[<span class="number">-5</span>])</div><div class="line">            n.append(m_zw[<span class="number">9</span>])</div><div class="line">            n.append(m_zw[<span class="number">10</span>])</div><div class="line">            n.append(m_zw[<span class="number">11</span>])            </div><div class="line">            n.append(m_zw[<span class="number">12</span>])</div><div class="line">            n.append(m_zw[<span class="number">13</span>])</div><div class="line">            n.append(m_zw[<span class="number">14</span>])                </div><div class="line">            n.append(m_zw[<span class="number">15</span>])</div><div class="line">            n.append(m_zw[<span class="number">16</span>])</div><div class="line">            n.append(m_zw[<span class="number">17</span>])                </div><div class="line">            n.append(m_zw[<span class="number">18</span>])</div><div class="line">            n.append(m_zw[<span class="number">19</span>])</div><div class="line">            n.append(m_zw[<span class="number">20</span>])                </div><div class="line">            n.append(m_zw[<span class="number">21</span>])</div><div class="line">            n.append(m_zw[<span class="number">22</span>])</div><div class="line">            n.append(m_zw[<span class="number">23</span>])                </div><div class="line">            n.append(m_zw[<span class="number">24</span>]) </div><div class="line">            m.append(n)</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">23</span>):</div><div class="line">                new_sheet.write(hangshu,i,n[i])</div><div class="line">            hangshu += <span class="number">1</span></div><div class="line">                                       <span class="comment">#将内容写入excel，如果抓不到内容通过except步骤continue继续下一步</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">continue</span></div><div class="line">new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="comment">#保存excel本地文件</span></div></pre></td></tr></table></figure>
+<pre><code>代码里面有个多余的二维数组m，是写在这里留着以后学会数据库操作后改的。
+
+
+上面的代码可以比较的抓到大部分结果，但是总有一些意外，比如外文名、英文答辩标题等等，后来改成一个table一个table单独匹配，仍然只用到re。
+</code></pre><pre><code class="python"><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="string">"""</span>
+<span class="string">Created on Thu Aug 17 14:30:34 2017</span>
+<span class="string">@author: vocaliu</span>
+<span class="string">@version: Anaconda python3.6</span>
+<span class="string">继续优化正则规则，把网页分为3个table分别抓取三种数据。</span>
+<span class="string">保留num列，方便查找原网页或者原文件。</span>
+<span class="string">"""</span>
+
+<span class="keyword">import</span> os
+<span class="keyword">import</span> re
+<span class="keyword">import</span> xlwt
+
+                                <span class="comment">#初始化部分    </span>
+m=[]                                                   <span class="comment">#建立一个二维数组，设置第一项相当于标题栏</span>
+n0=[<span class="string">'来源'</span>,<span class="string">'学号'</span>,<span class="string">'答辩时间'</span>,<span class="string">'姓名'</span>,<span class="string">'院系'</span>,<span class="string">'专业'</span>,<span class="string">'论文题目'</span>,<span class="string">'答辩地点'</span>,<span class="string">'答辩秘书'</span>,<span class="string">'主席'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员2'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员3'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员4'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员5'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'答辩秘书'</span>]
+m.append(n0)                                          <span class="comment">#把n0写进m里做m[0]</span>
+
+hangshu = <span class="number">1</span>                                           <span class="comment">#m列表的第一行写成n0有个自制的标题行，实际数据量=行数-1；引用数据时编号从0开始，注意行数要减</span>
+new_workbook=xlwt.Workbook()                          <span class="comment">#新建一个xls格式的excel并打开一个sheet</span>
+new_sheet=new_workbook.add_sheet(<span class="string">"phd_data"</span>,cell_overwrite_ok=<span class="keyword">True</span>)  
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">24</span>):
+    new_sheet.write(<span class="number">0</span>,i,m[<span class="number">0</span>][i])                <span class="comment">#把m的第一项(m[0])，逐个写入excel的第一行(行号为0)</span>
+
+<span class="comment">#循环抓内容</span>
+<span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):    
+    filename = <span class="string">'F:\phddbjl\{}.htm'</span>.format(num)
+    <span class="keyword">try</span>:
+        <span class="keyword">with</span> open(<span class="string">'{}'</span>.format(filename),<span class="string">'rb'</span>) <span class="keyword">as</span> fp:    <span class="comment">#本地化</span>
+            data = fp.read()
+            data = data.decode(<span class="string">"gbk"</span>)               <span class="comment">#改变编码从二进制变成显示中文</span>
+            data = repr(data)                       <span class="comment">#字符化，有没有似乎没影响</span>
+
+<span class="comment">#            pattern_xuehao = r'D[FGZ]\d{7}'             #df dg dz三种学号</span>
+<span class="comment">#            pattern_dabianshijian = r'\d{4}\-\d{1,2}\-\d{1,2}'   </span>
+<span class="comment">#为3个table分别重写pattern，t1是个人资料，t2是答辩委员会，t3是秘书时间地点</span>
+            pattern_t1 = <span class="string">r'&lt;/font&gt;&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}"&gt;&lt;font size="\d{1}" color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+            pattern_t2 = <span class="string">r'&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}" align="center"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+            pattern_t3 = <span class="string">r'&lt;/font&gt;&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+
+            m_t1 = re.findall(pattern_t1,data)      <span class="comment">#学号</span>
+            m_t2 = re.findall(pattern_t2,data)     <span class="comment">#时间     </span>
+            m_t3 = re.findall(pattern_t3,data)  <span class="comment">#以下是包含所需数字的字符串，需要再选</span>
+
+            n=[]                                  <span class="comment">#拼一个list出来，再写入m作为二维list中的一项</span>
+            n.append(num)
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">3</span>][<span class="number">77</span>:<span class="number">-7</span>].split())) <span class="comment">#1，选指定范围的内容；2，去掉多余的空格</span>
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">1</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">2</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">0</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">1</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">4</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">2</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">0</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">15</span>):
+                n.append(<span class="string">' '</span>.join(m_t2[x][<span class="number">76</span>:<span class="number">-7</span>].split()))            
+
+            m.append(n)
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">24</span>):
+            new_sheet.write(hangshu,i,n[i])
+        hangshu += <span class="number">1</span>
+                                       <span class="comment">#将内容写入excel，如果抓不到内容通过except步骤continue继续下一步</span>
+    <span class="keyword">except</span>:
+        <span class="keyword">continue</span>
+print(m)
+new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="comment">#保存excel本地文件</span>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6k59xec0009wwulpi553hw4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/20/diary-170820/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          汇总一下现有学习内容和进展
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/20/python爬虫-phddata1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python爬虫-博士究竟要读多久-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/20/diary-170820/">汇总一下现有学习内容和进展</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/19/python爬虫-mmjpg/">python爬虫-mmjpg</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/19/python爬虫-meizitu/">python爬虫-meizitu</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 vocaliu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

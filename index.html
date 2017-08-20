@@ -69,6 +69,224 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-diary-170820" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/diary-170820/" class="article-date">
+  <time datetime="2017-08-20T02:49:56.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/diary-170820/">汇总一下现有学习内容和进展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1，python"><a href="#1，python" class="headerlink" title="1，python"></a>1，python</h2><ul>
+<li>1.1, 选择合适的ide安装。</li>
+<li>1.2, 基本写法。</li>
+<li>1.3, 各种强大的库。</li>
+<li>1.4, 待定。</li>
+</ul>
+<h2 id="2，git"><a href="#2，git" class="headerlink" title="2，git"></a>2，git</h2><ul>
+<li>2.1, 注册github并创建repository。</li>
+<li>2.2, 本地git bash的使用</li>
+<li>2.3, 本地库跟远程库的处理、交互</li>
+<li>2.4, 在此基础上，基于hexo建立本blog</li>
+</ul>
+<h2 id="3，hexo"><a href="#3，hexo" class="headerlink" title="3，hexo"></a>3，hexo</h2><ul>
+<li>3.1, hexo的安装。非常多的坑！！！</li>
+<li>3.2, hexo的使用。hexo s g d</li>
+<li>3.3, 其他功能如换主题、加评论框等都还没有学。</li>
+</ul>
+<h2 id="4，markdown"><a href="#4，markdown" class="headerlink" title="4，markdown"></a>4，markdown</h2><p> 需要用md语言，慢慢学习吧。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/diary-170820/" data-id="cj6k59xdu0000wwulnxgas6zx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diary/">diary</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python爬虫-phddata2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/python爬虫-phddata2/" class="article-date">
+  <time datetime="2017-08-20T02:20:53.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。
+导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Wed Aug 16 09:38:29 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version: Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"></div><div class="line"><span class="comment">#初始化部分    </span></div><div class="line">m=[]                                                   <span class="comment">#建立一个二维数组，设置第一项相当于标题栏</span></div><div class="line">n0=[<span class="string">'学号'</span>,<span class="string">'答辩时间'</span>,<span class="string">'姓名'</span>,<span class="string">'院系'</span>,<span class="string">'专业'</span>,<span class="string">'论文题目'</span>,<span class="string">'答辩地点'</span>,<span class="string">'主席'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员2'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员3'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员4'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员5'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'答辩秘书'</span>]</div><div class="line">m.append(n0)                                          <span class="comment">#把n0写进m里做m[0]</span></div><div class="line">numstart = <span class="number">1</span></div><div class="line">numstop = <span class="number">2</span>                                           <span class="comment">#具体数值就不写了</span></div><div class="line">hangshu = <span class="number">1</span>                                           <span class="comment">#m列表的第一行写成n0有个自制的标题行，实际数据量=行数-1；引用数据时编号从0开始，注意行数要减</span></div><div class="line">new_workbook=xlwt.Workbook()                          <span class="comment">#新建一个xls格式的excel并打开一个sheet</span></div><div class="line">new_sheet=new_workbook.add_sheet(<span class="string">"phd_data"</span>,cell_overwrite_ok=<span class="keyword">True</span>)  </div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">23</span>):</div><div class="line">    new_sheet.write(<span class="number">0</span>,i,m[<span class="number">0</span>][i])                      <span class="comment">#把m的第一项(m[0])写入excel的第一行(行号为0)</span></div><div class="line"></div><div class="line"><span class="comment">#循环抓内容</span></div><div class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):    </div><div class="line">    filename = <span class="string">'F:\phddbjl\&#123;&#125;.htm'</span>.format(num)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">with</span> open(<span class="string">'&#123;&#125;'</span>.format(filename),<span class="string">'rb'</span>) <span class="keyword">as</span> fp: </div><div class="line">            data = fp.read()</div><div class="line">            data = data.decode(<span class="string">"gbk"</span>)               <span class="comment">#改变编码从二进制变成显示中文</span></div><div class="line">            data = repr(data)                       <span class="comment">#字符化，有没有似乎没影响</span></div><div class="line">            pattern = <span class="string">r'[\u4e00-\u9fa5]+\S*[\u4e00-\u9fa5]+'</span>         <span class="comment">#抓出由中文字符开始和结束的连续字符串</span></div><div class="line">            pattern = re.compile(pattern)          <span class="comment">#有没有似乎没影响</span></div><div class="line">            pattern_time = <span class="string">r'\d&#123;4&#125;\-\d&#123;1,2&#125;\-\d&#123;1,2&#125;'</span></div><div class="line">            pattern_xh = <span class="string">r'D[FGZ]\d&#123;7&#125;'</span>             <span class="comment">#df dg dz三种学号格式</span></div><div class="line">            m_zw = re.findall(pattern,data)         <span class="comment">#得到所有2个以上连续的中文字符,院系m3,专业m4,姓名m5，题目m7，答辩地点m27</span></div><div class="line">            m_xh = re.findall(pattern_xh,data)      <span class="comment">#学号</span></div><div class="line">            m_sj = re.findall(pattern_time,data)     <span class="comment">#时间     </span></div><div class="line">            n=[]                                  <span class="comment">#拼一个list出来，再写入m作为二维list中的一项</span></div><div class="line">            n.append(m_xh[<span class="number">0</span>])                        <span class="comment">#按顺序包含['学号','姓名','院系','专业','论文题目','答辩时间']</span></div><div class="line">            n.append(m_sj[<span class="number">0</span>])</div><div class="line">            n.append(m_zw[<span class="number">5</span>])</div><div class="line">            n.append(m_zw[<span class="number">3</span>])</div><div class="line">            n.append(m_zw[<span class="number">4</span>])</div><div class="line">            n.append(m_zw[<span class="number">7</span>])</div><div class="line">            n.append(m_zw[<span class="number">-5</span>])</div><div class="line">            n.append(m_zw[<span class="number">9</span>])</div><div class="line">            n.append(m_zw[<span class="number">10</span>])</div><div class="line">            n.append(m_zw[<span class="number">11</span>])            </div><div class="line">            n.append(m_zw[<span class="number">12</span>])</div><div class="line">            n.append(m_zw[<span class="number">13</span>])</div><div class="line">            n.append(m_zw[<span class="number">14</span>])                </div><div class="line">            n.append(m_zw[<span class="number">15</span>])</div><div class="line">            n.append(m_zw[<span class="number">16</span>])</div><div class="line">            n.append(m_zw[<span class="number">17</span>])                </div><div class="line">            n.append(m_zw[<span class="number">18</span>])</div><div class="line">            n.append(m_zw[<span class="number">19</span>])</div><div class="line">            n.append(m_zw[<span class="number">20</span>])                </div><div class="line">            n.append(m_zw[<span class="number">21</span>])</div><div class="line">            n.append(m_zw[<span class="number">22</span>])</div><div class="line">            n.append(m_zw[<span class="number">23</span>])                </div><div class="line">            n.append(m_zw[<span class="number">24</span>]) </div><div class="line">            m.append(n)</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">23</span>):</div><div class="line">                new_sheet.write(hangshu,i,n[i])</div><div class="line">            hangshu += <span class="number">1</span></div><div class="line">                                       <span class="comment">#将内容写入excel，如果抓不到内容通过except步骤continue继续下一步</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">continue</span></div><div class="line">new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="comment">#保存excel本地文件</span></div></pre></td></tr></table></figure>
+<pre><code>代码里面有个多余的二维数组m，是写在这里留着以后学会数据库操作后改的。
+
+
+上面的代码可以比较的抓到大部分结果，但是总有一些意外，比如外文名、英文答辩标题等等，后来改成一个table一个table单独匹配，仍然只用到re。
+</code></pre><pre><code class="python"><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="string">"""</span>
+<span class="string">Created on Thu Aug 17 14:30:34 2017</span>
+<span class="string">@author: vocaliu</span>
+<span class="string">@version: Anaconda python3.6</span>
+<span class="string">继续优化正则规则，把网页分为3个table分别抓取三种数据。</span>
+<span class="string">保留num列，方便查找原网页或者原文件。</span>
+<span class="string">"""</span>
+
+<span class="keyword">import</span> os
+<span class="keyword">import</span> re
+<span class="keyword">import</span> xlwt
+
+                                <span class="comment">#初始化部分    </span>
+m=[]                                                   <span class="comment">#建立一个二维数组，设置第一项相当于标题栏</span>
+n0=[<span class="string">'来源'</span>,<span class="string">'学号'</span>,<span class="string">'答辩时间'</span>,<span class="string">'姓名'</span>,<span class="string">'院系'</span>,<span class="string">'专业'</span>,<span class="string">'论文题目'</span>,<span class="string">'答辩地点'</span>,<span class="string">'答辩秘书'</span>,<span class="string">'主席'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员2'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员3'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员4'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员5'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'答辩秘书'</span>]
+m.append(n0)                                          <span class="comment">#把n0写进m里做m[0]</span>
+
+hangshu = <span class="number">1</span>                                           <span class="comment">#m列表的第一行写成n0有个自制的标题行，实际数据量=行数-1；引用数据时编号从0开始，注意行数要减</span>
+new_workbook=xlwt.Workbook()                          <span class="comment">#新建一个xls格式的excel并打开一个sheet</span>
+new_sheet=new_workbook.add_sheet(<span class="string">"phd_data"</span>,cell_overwrite_ok=<span class="keyword">True</span>)  
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">24</span>):
+    new_sheet.write(<span class="number">0</span>,i,m[<span class="number">0</span>][i])                <span class="comment">#把m的第一项(m[0])，逐个写入excel的第一行(行号为0)</span>
+
+<span class="comment">#循环抓内容</span>
+<span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):    
+    filename = <span class="string">'F:\phddbjl\{}.htm'</span>.format(num)
+    <span class="keyword">try</span>:
+        <span class="keyword">with</span> open(<span class="string">'{}'</span>.format(filename),<span class="string">'rb'</span>) <span class="keyword">as</span> fp:    <span class="comment">#本地化</span>
+            data = fp.read()
+            data = data.decode(<span class="string">"gbk"</span>)               <span class="comment">#改变编码从二进制变成显示中文</span>
+            data = repr(data)                       <span class="comment">#字符化，有没有似乎没影响</span>
+
+<span class="comment">#            pattern_xuehao = r'D[FGZ]\d{7}'             #df dg dz三种学号</span>
+<span class="comment">#            pattern_dabianshijian = r'\d{4}\-\d{1,2}\-\d{1,2}'   </span>
+<span class="comment">#为3个table分别重写pattern，t1是个人资料，t2是答辩委员会，t3是秘书时间地点</span>
+            pattern_t1 = <span class="string">r'&lt;/font&gt;&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}"&gt;&lt;font size="\d{1}" color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+            pattern_t2 = <span class="string">r'&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}" align="center"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+            pattern_t3 = <span class="string">r'&lt;/font&gt;&lt;/td&gt;&lt;td height="\d{2}" width="\d{3}"&gt;&lt;font color="#\d{6}"&gt;&amp;nbsp;.*?\s*&lt;/font&gt;'</span>
+
+            m_t1 = re.findall(pattern_t1,data)      <span class="comment">#学号</span>
+            m_t2 = re.findall(pattern_t2,data)     <span class="comment">#时间     </span>
+            m_t3 = re.findall(pattern_t3,data)  <span class="comment">#以下是包含所需数字的字符串，需要再选</span>
+
+            n=[]                                  <span class="comment">#拼一个list出来，再写入m作为二维list中的一项</span>
+            n.append(num)
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">3</span>][<span class="number">77</span>:<span class="number">-7</span>].split())) <span class="comment">#1，选指定范围的内容；2，去掉多余的空格</span>
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">1</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">2</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">0</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">1</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t1[<span class="number">4</span>][<span class="number">77</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">2</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            n.append(<span class="string">' '</span>.join(m_t3[<span class="number">0</span>][<span class="number">68</span>:<span class="number">-7</span>].split()))
+            <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">15</span>):
+                n.append(<span class="string">' '</span>.join(m_t2[x][<span class="number">76</span>:<span class="number">-7</span>].split()))            
+
+            m.append(n)
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">24</span>):
+            new_sheet.write(hangshu,i,n[i])
+        hangshu += <span class="number">1</span>
+                                       <span class="comment">#将内容写入excel，如果抓不到内容通过except步骤continue继续下一步</span>
+    <span class="keyword">except</span>:
+        <span class="keyword">continue</span>
+print(m)
+new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="comment">#保存excel本地文件</span>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6k59xec0009wwulpi553hw4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python爬虫-phddata1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/python爬虫-phddata1/" class="article-date">
+  <time datetime="2017-08-20T02:17:53.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>前面发的是喜闻乐见的抓美女图片的代码，原因很简单：
+</code></pre><ul>
+<li>网站结构好分析，甚至没有用到bs4、scrapy之类的爬虫常用工具;</li>
+<li>图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获;</li>
+<li><p>也可以用PIL等工具进行后续分析处理.</p>
+<p>  通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫变的有意义。</p>
+<p>  实际选择的是某大学的博士生的毕业时间。看看如今博士延期的具体比例。原理很简单，通过抓取所有博士生在线答辩公告，对比学号和答辩日期。同时，实际上也可以得到很多其他有意思的信息。由于</p>
+<p>  学校公告不会一直保留，所以第一步是把答辩公告全部抓到本地，并不断增量更新。有前面的爬虫练手，这个抓取是很好写的。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Tue Aug 15 13:41:44 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version: Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    request = urllib.request.Request(url) <span class="comment">#构建请求</span></div><div class="line">    response = urllib.request.urlopen(request,timeout=<span class="number">10</span>)</div><div class="line">    data = response.read()                             <span class="comment">#获得服务器响应并读取链接内容（网页、图片或其他）</span></div><div class="line">    <span class="keyword">return</span> data                                        <span class="comment">#返回值就是链接中的具体内容</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_page</span><span class="params">(numstart,numstop)</span>:</span></div><div class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):</div><div class="line"><span class="comment">#        url0 = '这个就不发了'</span></div><div class="line">        url = url0 + str(num).zfill(<span class="number">5</span>)        <span class="comment">#补全网址</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'F:\phddbjl'</span>):  <span class="comment">#如果没有对应的文件夹</span></div><div class="line">            os.mkdir(<span class="string">'F:\phddbjl'</span>)            <span class="comment">#建立文件夹</span></div><div class="line">        filename = <span class="string">'F:\phddbjl\&#123;&#125;.htm'</span>.format(num)     <span class="comment">#直接以网页编号作为文件名</span></div><div class="line">        <span class="keyword">try</span>:                                            <span class="comment">#使用try...except，如果当前url有答辩记录则下载，否则报错。</span></div><div class="line">            dbjl = download_page(url)</div><div class="line">            <span class="keyword">with</span> open(<span class="string">'&#123;&#125;'</span>.format(filename),<span class="string">'wb'</span>) <span class="keyword">as</span> fp:</div><div class="line">                fp.write(dbjl)</div><div class="line">                print(<span class="string">'&#123;&#125; downloaded'</span>.format(filename))</div><div class="line">                time.sleep(<span class="number">0.6</span>)</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            print(<span class="string">'网页无法打开 &#123;&#125;'</span>.format(url))                    </div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'Parent process &#123;&#125;.'</span>.format(os.getpid()))</div><div class="line">    p = Pool(<span class="number">8</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</div><div class="line">        p.apply_async(save_page, args=(i*<span class="number">180</span>+num1,(i+<span class="number">1</span>)*<span class="number">180</span>+num1)) <span class="comment">#8个进程公式进行，每个进程完成180次抓取</span></div><div class="line">    p.close()</div><div class="line">    p.join()</div><div class="line">    print(<span class="string">'All subprocesses done.'</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata1/" data-id="cj6k59xeb0008wwull3rxwzit" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python爬虫-mmjpg" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/19/python爬虫-mmjpg/" class="article-date">
@@ -170,10 +388,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/python爬虫-mmjpg/" data-id="cj6jcfuu50004osul167d6qcl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/python爬虫-mmjpg/" data-id="cj6k59xe90005wwul1sv5vdcl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
 
     </footer>
   </div>
@@ -204,16 +422,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 用 三个` python、三个` 作为python代码开始和结束的标识，或者说标记后显示成python代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Sun Aug 13 00:47:22 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version:Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    head = &#123; <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36'</span>,  </div><div class="line">             <span class="string">'Referer'</span>: <span class="string">'http://www.meizitu.com'</span>,  </div><div class="line">             &#125;                                         <span class="comment">#伪装浏览器登陆</span></div><div class="line">    request = urllib.request.Request(url,headers=head) <span class="comment">#构建请求</span></div><div class="line">    response = urllib.request.urlopen(request,timeout=<span class="number">10</span>)</div><div class="line">    data = response.read()                             <span class="comment">#获得服务器响应并读取链接内容（网页、图片或其他）</span></div><div class="line">    <span class="keyword">return</span> data                                        <span class="comment">#返回值就是链接中的具体内容</span></div><div class="line">        </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">imgdownload_num</span><span class="params">(startnum,stopnum)</span>:</span></div><div class="line">    <span class="keyword">for</span> szwz <span class="keyword">in</span> range(startnum,stopnum):               <span class="comment">#这个数字不断变化来抓不同链接</span></div><div class="line">        url = url0 + str(szwz) + <span class="string">'.html'</span>               <span class="comment">#合并网址</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz)):   <span class="comment">#如果不存在与网址一样的文件夹</span></div><div class="line">            os.mkdir(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz))             <span class="comment">#新建与网址一样的文件夹</span></div><div class="line">        wronglink = <span class="number">0</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            html = download_page(url)                  <span class="comment">#在这里做一轮try except，防止遇到错误的抓取页面导致的报错</span></div><div class="line">            regx = <span class="string">r'http://[\S]*/[0-9]&#123;2&#125;\.jpg'</span>       <span class="comment">#通过正则配对，得到页面中的jpg图片链接</span></div><div class="line">            pattern = re.compile(regx)                 <span class="comment">#re.compile() 可以把正则表达式编译成一个正则表达式对象.</span></div><div class="line">            img_link = re.findall(pattern,repr(html))  <span class="comment">#repr的作用参考http://www.cnpythoner.com/post/251.html</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            wronglink += <span class="number">1</span></div><div class="line">            print(<span class="string">'发现第&#123;&#125;个错误的抓取网址'</span>.format(wronglink))<span class="comment">#设置时会里有一些指向404页面的网址</span></div><div class="line">            <span class="keyword">break</span></div><div class="line">        num = <span class="number">1</span></div><div class="line">        wrongpiclink = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> img <span class="keyword">in</span> img_link:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                image = download_page(img)             <span class="comment">#将每个img_link链接中的图片都读取出来，并保存成下面的本地链接</span></div><div class="line">                <span class="keyword">if</span> len(image) &gt; <span class="number">4000</span>:                 <span class="comment">#残留代码，通过筛选文件大小去掉不相关的缩略图</span></div><div class="line">                    <span class="keyword">with</span> open(<span class="string">'F:\pic\&#123;&#125;\&#123;&#125;.jpg'</span>.format(szwz,num),<span class="string">'wb'</span>) <span class="keyword">as</span> fp:</div><div class="line">                        fp.write(image)</div><div class="line">                        print(<span class="string">'pic&#123;&#125;-&#123;&#125; downloaded from &#123;&#125;'</span>.format(szwz,num,img))</div><div class="line">                        num += <span class="number">1</span></div><div class="line">                        time.sleep(<span class="number">0.6</span>)</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                wrongpiclink += <span class="number">1</span></div><div class="line">                print(<span class="string">'发现第&#123;&#125;个错误的图片链接 ---&gt; &#123;&#125;'</span>.format(wrongpiclink,img))<span class="comment">#源文件里有一些指向404页面的图片</span></div><div class="line">    <span class="keyword">return</span></div><div class="line"></div><div class="line">url0 = <span class="string">'http://www.meizitu.com/a/'</span></div><div class="line"><span class="comment"># 开始多进程同时爬，改自 https://www.liaoxuefeng.com/ python3的多进程部分</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'Parent process %s.'</span> % os.getpid())</div><div class="line">    p = Pool(<span class="number">8</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</div><div class="line">        p.apply_async(imgdownload_num, args=(i*<span class="number">8</span>+<span class="number">1</span>,i*<span class="number">8</span>+<span class="number">100</span>))</div><div class="line">    p.close()</div><div class="line">    p.join()</div><div class="line">    print(<span class="string">'All subprocesses done.'</span>)</div></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Sun Aug 13 00:47:22 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version:Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    head = &#123; <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36'</span>,  </div><div class="line">             <span class="string">'Referer'</span>: <span class="string">'http://www.meizitu.com'</span>,  </div><div class="line">             &#125;                                         <span class="comment">#伪装浏览器登陆</span></div><div class="line">    request = urllib.request.Request(url,headers=head) <span class="comment">#构建请求</span></div><div class="line">    response = urllib.request.urlopen(request,timeout=<span class="number">10</span>)</div><div class="line">    data = response.read()                             <span class="comment">#获得服务器响应并读取链接内容（网页、图片或其他）</span></div><div class="line">    <span class="keyword">return</span> data                                        <span class="comment">#返回值就是链接中的具体内容</span></div><div class="line">        </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">imgdownload_num</span><span class="params">(startnum,stopnum)</span>:</span></div><div class="line">    <span class="keyword">for</span> szwz <span class="keyword">in</span> range(startnum,stopnum):               <span class="comment">#这个数字不断变化来抓不同链接</span></div><div class="line">        url = url0 + str(szwz) + <span class="string">'.html'</span>               <span class="comment">#合并网址</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz)):   <span class="comment">#如果不存在与网址一样的文件夹</span></div><div class="line">            os.mkdir(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz))             <span class="comment">#新建与网址一样的文件夹</span></div><div class="line">        wronglink = <span class="number">0</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            html = download_page(url)                  <span class="comment">#在这里做一轮try except，防止遇到错误的抓取页面导致的报错</span></div><div class="line">            regx = <span class="string">r'http://[\S]*/[0-9]&#123;2&#125;\.jpg'</span>       <span class="comment">#通过正则配对，得到页面中的jpg图片链接</span></div><div class="line">            pattern = re.compile(regx)                 <span class="comment">#re.compile() 可以把正则表达式编译成一个正则表达式对象.</span></div><div class="line">            img_link = re.findall(pattern,repr(html))  <span class="comment">#repr的作用参考http://www.cnpythoner.com/post/251.html</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            wronglink += <span class="number">1</span></div><div class="line">            print(<span class="string">'发现第&#123;&#125;个错误的抓取网址'</span>.format(wronglink))<span class="comment">#设置时会里有一些指向404页面的网址</span></div><div class="line">            <span class="keyword">break</span></div><div class="line">        num = <span class="number">1</span></div><div class="line">        wrongpiclink = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> img <span class="keyword">in</span> img_link:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                image = download_page(img)             <span class="comment">#将每个img_link链接中的图片都读取出来，并保存成下面的本地链接</span></div><div class="line">                <span class="keyword">if</span> len(image) &gt; <span class="number">4000</span>:                 <span class="comment">#残留代码，通过筛选文件大小去掉不相关的缩略图</span></div><div class="line">                    <span class="keyword">with</span> open(<span class="string">'F:\pic\&#123;&#125;\&#123;&#125;.jpg'</span>.format(szwz,num),<span class="string">'wb'</span>) <span class="keyword">as</span> fp:</div><div class="line">                        fp.write(image)</div><div class="line">                        print(<span class="string">'pic&#123;&#125;-&#123;&#125; downloaded from &#123;&#125;'</span>.format(szwz,num,img))</div><div class="line">                        num += <span class="number">1</span></div><div class="line">                        time.sleep(<span class="number">0.6</span>)</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                wrongpiclink += <span class="number">1</span></div><div class="line">                print(<span class="string">'发现第&#123;&#125;个错误的图片链接 ---&gt; &#123;&#125;'</span>.format(wrongpiclink,img))<span class="comment">#源文件里有一些指向404页面的图片</span></div><div class="line">    <span class="keyword">return</span></div><div class="line"></div><div class="line">url0 = <span class="string">'http://www.meizitu.com/a/'</span></div><div class="line"><span class="comment"># 开始多进程同时爬，改自 https://www.liaoxuefeng.com/ python3的多进程部分</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'Parent process %s.'</span> % os.getpid())</div><div class="line">    p = Pool(<span class="number">8</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</div><div class="line">        p.apply_async(imgdownload_num, args=(i*<span class="number">8</span>+<span class="number">1</span>,i*<span class="number">8</span>+<span class="number">100</span>))</div><div class="line">    p.close()</div><div class="line">    p.join()</div><div class="line">    print(<span class="string">'All subprocesses done.'</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/python爬虫-meizitu/" data-id="cj6jcfuu80005osultyt3rz6x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/python爬虫-meizitu/" data-id="cj6k59xe60004wwule17o6l0a" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
 
     </footer>
   </div>
@@ -260,7 +477,7 @@
 <p><code>使用一对tab上面那个点的结果</code></p>
 <p><code>使用两对tab上面那个点的结果</code></p>
 <p><code>使用三对tab上面那个点的结果</code></p>
-<p>使用三对点加上程序语言标注，写程序源文件</p>
+<p>使用三对点加上程序语言标注，写程序源文件。发现有时候带行号有时候不带行号，而且把部分代码外面的文字加进来了，奇怪。</p>
 <p>插入图片<br> <img src="http://static.youku.com/youku/dist/img/find/yk-logo-1220.png" alt=""></p>
 <p>插入图片带链接多次失败<br> <a href="http://v.youku.com/v_show/id_XMjgzNzM0NTYxNg==.html?spm=a2htv.20009910.contentHolderUnit2.A&amp;from=y1.3-tv-grid-1007-9910.86804.1-2#paction" target="_blank" rel="external"><img src="http://static.youku.com/youku/dist/img/find/yk-logo-1220.png" alt=""></a></p>
 <h2 id="4，学习资料"><a href="#4，学习资料" class="headerlink" title="4，学习资料"></a>4，学习资料</h2><p><a href="http://www.jianshu.com/p/b03a8d7b1719" target="_blank" rel="external">http://www.jianshu.com/p/b03a8d7b1719</a></p>
@@ -268,7 +485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cj6jcfutx0001osul6y1i32mf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cj6k59xe40003wwulpjpi2wcn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -379,7 +596,7 @@
 <h2 id="关于收费"><a href="#关于收费" class="headerlink" title="关于收费"></a>关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#x68;&#117;&#115;&#x74;&#103;&#111;&#x63;&#x6b;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x68;&#117;&#115;&#x74;&#103;&#111;&#x63;&#x6b;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x68;&#x75;&#x73;&#x74;&#103;&#x6f;&#99;&#x6b;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x68;&#x75;&#x73;&#x74;&#103;&#x6f;&#99;&#x6b;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
@@ -388,7 +605,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cj6jcfutz0002osuloyxra5vg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cj6k59xgs000vwwulmmazqoos" class="article-share-link">Share</a>
       
       
     </footer>
@@ -425,7 +642,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cj6jcfuuf0009osul9s1g53s7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cj6k59xgf000swwul7xs774um" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -455,7 +672,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cj6jcfuu90006osulhayw3dc8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cj6k59xga000rwwuljesvy278" class="article-share-link">Share</a>
       
       
     </footer>
@@ -500,7 +717,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/18/hello-world/" data-id="cj6jcfutr0000osulf4h88rej" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/18/hello-world/" data-id="cj6k59xe00001wwuliudbc5x9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +739,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
   </div>
 
@@ -532,7 +749,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
     </div>
   </div>
 
@@ -554,23 +771,23 @@
       <ul>
         
           <li>
+            <a href="/2017/08/20/diary-170820/">汇总一下现有学习内容和进展</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/19/python爬虫-mmjpg/">python爬虫-mmjpg</a>
           </li>
         
           <li>
             <a href="/2017/08/19/python爬虫-meizitu/">python爬虫-meizitu</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/19/mdstudy/">markdown学习</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/19/md-editor-intro-maxiang/">markdown编辑器之————马克飞象</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/19/testmarkdown/">testmarkdown</a>
           </li>
         
       </ul>

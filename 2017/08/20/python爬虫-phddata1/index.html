@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python爬虫-博士究竟要读多久-1 | 自学编程记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前面发的是喜闻乐见的抓美女图片的代码，原因很简单：  网站结构好分析，甚至没有用到bs4、scrapy之类的爬虫常用工具; 图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获; 也可以用PIL等工具进行后续分析处理.   通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫-博士究竟要读多久-1">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/python爬虫-phddata1/index.html">
+<meta property="og:site_name" content="自学编程记录">
+<meta property="og:description" content="前面发的是喜闻乐见的抓美女图片的代码，原因很简单：  网站结构好分析，甚至没有用到bs4、scrapy之类的爬虫常用工具; 图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获; 也可以用PIL等工具进行后续分析处理.   通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-20T03:03:29.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python爬虫-博士究竟要读多久-1">
+<meta name="twitter:description" content="前面发的是喜闻乐见的抓美女图片的代码，原因很简单：  网站结构好分析，甚至没有用到bs4、scrapy之类的爬虫常用工具; 图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获; 也可以用PIL等工具进行后续分析处理.   通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫">
+  
+    <link rel="alternate" href="/atom.xml" title="自学编程记录" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">自学编程记录</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">人生苦短 我选python</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python爬虫-phddata1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/python爬虫-phddata1/" class="article-date">
+  <time datetime="2017-08-20T02:17:53.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬虫-博士究竟要读多久-1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>前面发的是喜闻乐见的抓美女图片的代码，原因很简单：
+</code></pre><ul>
+<li>网站结构好分析，甚至没有用到bs4、scrapy之类的爬虫常用工具;</li>
+<li>图片抓下来就可以是最终成果，给自己学习编程一个阶段性的收获;</li>
+<li><p>也可以用PIL等工具进行后续分析处理.</p>
+<p>  通过抓两个图片网站熟悉了urllib、os、re和multiprocessing几个工具的基本用法和python程序的基本结构之后，找一个有意义的内容进行抓取分析，让爬虫变的有意义。</p>
+<p>  实际选择的是某大学的博士生的毕业时间。看看如今博士延期的具体比例。原理很简单，通过抓取所有博士生在线答辩公告，对比学号和答辩日期。同时，实际上也可以得到很多其他有意思的信息。由于</p>
+<p>  学校公告不会一直保留，所以第一步是把答辩公告全部抓到本地，并不断增量更新。有前面的爬虫练手，这个抓取是很好写的。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Tue Aug 15 13:41:44 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version: Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    request = urllib.request.Request(url) <span class="comment">#构建请求</span></div><div class="line">    response = urllib.request.urlopen(request,timeout=<span class="number">10</span>)</div><div class="line">    data = response.read()                             <span class="comment">#获得服务器响应并读取链接内容（网页、图片或其他）</span></div><div class="line">    <span class="keyword">return</span> data                                        <span class="comment">#返回值就是链接中的具体内容</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_page</span><span class="params">(numstart,numstop)</span>:</span></div><div class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range (numstart,numstop):</div><div class="line"><span class="comment">#        url0 = '这个就不发了'</span></div><div class="line">        url = url0 + str(num).zfill(<span class="number">5</span>)        <span class="comment">#补全网址</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'F:\phddbjl'</span>):  <span class="comment">#如果没有对应的文件夹</span></div><div class="line">            os.mkdir(<span class="string">'F:\phddbjl'</span>)            <span class="comment">#建立文件夹</span></div><div class="line">        filename = <span class="string">'F:\phddbjl\&#123;&#125;.htm'</span>.format(num)     <span class="comment">#直接以网页编号作为文件名</span></div><div class="line">        <span class="keyword">try</span>:                                            <span class="comment">#使用try...except，如果当前url有答辩记录则下载，否则报错。</span></div><div class="line">            dbjl = download_page(url)</div><div class="line">            <span class="keyword">with</span> open(<span class="string">'&#123;&#125;'</span>.format(filename),<span class="string">'wb'</span>) <span class="keyword">as</span> fp:</div><div class="line">                fp.write(dbjl)</div><div class="line">                print(<span class="string">'&#123;&#125; downloaded'</span>.format(filename))</div><div class="line">                time.sleep(<span class="number">0.6</span>)</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            print(<span class="string">'网页无法打开 &#123;&#125;'</span>.format(url))                    </div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'Parent process &#123;&#125;.'</span>.format(os.getpid()))</div><div class="line">    p = Pool(<span class="number">8</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</div><div class="line">        p.apply_async(save_page, args=(i*<span class="number">180</span>+num1,(i+<span class="number">1</span>)*<span class="number">180</span>+num1)) <span class="comment">#8个进程公式进行，每个进程完成180次抓取</span></div><div class="line">    p.close()</div><div class="line">    p.join()</div><div class="line">    print(<span class="string">'All subprocesses done.'</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata1/" data-id="cj6k59xeb0008wwull3rxwzit" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/20/python爬虫-phddata2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python爬虫-博士究竟要读多久-2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/19/python爬虫-mmjpg/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python爬虫-mmjpg</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/20/diary-170820/">汇总一下现有学习内容和进展</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata2/">python爬虫-博士究竟要读多久-2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/20/python爬虫-phddata1/">python爬虫-博士究竟要读多久-1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/19/python爬虫-mmjpg/">python爬虫-mmjpg</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/19/python爬虫-meizitu/">python爬虫-meizitu</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 vocaliu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
