@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="人生苦短 我选python">
 <meta property="og:description" content="抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。 123456789101112131415161718192021222324252627282930313233">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-20T06:06:15.597Z">
+<meta property="og:updated_time" content="2017-08-22T01:51:48.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬虫-博士学位分析-2">
 <meta name="twitter:description" content="抓下来以后就是要分析了，先整理成数据库再进行数据处理。这部分等学会SQLite或者mysql后再具体进行。暂时使用一个简单的折衷方案：导入excel进行分析。导入excel用到的是xlwt，后续的数据分析都在xlwt里进行。备注，xlwt是针对xls格式的，xlsx格式的需要用别的。 123456789101112131415161718192021222324252627282930313233">
@@ -100,15 +100,13 @@
 <span class="string">Created on Thu Aug 17 14:30:34 2017</span>
 <span class="string">@author: vocaliu</span>
 <span class="string">@version: Anaconda python3.6</span>
-<span class="string">继续优化正则规则，把网页分为3个table分别抓取三种数据。</span>
-<span class="string">保留num列，方便查找原网页或者原文件。</span>
 <span class="string">"""</span>
 
 <span class="keyword">import</span> os
 <span class="keyword">import</span> re
 <span class="keyword">import</span> xlwt
 
-                                <span class="comment">#初始化部分    </span>
+<span class="comment">#初始化部分    </span>
 m=[]                                                   <span class="comment">#建立一个二维数组，设置第一项相当于标题栏</span>
 n0=[<span class="string">'来源'</span>,<span class="string">'学号'</span>,<span class="string">'答辩时间'</span>,<span class="string">'姓名'</span>,<span class="string">'院系'</span>,<span class="string">'专业'</span>,<span class="string">'论文题目'</span>,<span class="string">'答辩地点'</span>,<span class="string">'答辩秘书'</span>,<span class="string">'主席'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员2'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员3'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员4'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'成员5'</span>,<span class="string">'职称'</span>,<span class="string">'单位'</span>,<span class="string">'答辩秘书'</span>]
 m.append(n0)                                          <span class="comment">#把n0写进m里做m[0]</span>
@@ -167,7 +165,7 @@ new_workbook.save(<span class="string">'test2.xls'</span>)        <span class="c
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6mw92dj000ufkulq15tf4fy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/python爬虫-phddata2/" data-id="cj6mxqta7000eu4ulcuo8g5ye" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
