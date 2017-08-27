@@ -91,11 +91,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><em>分析豆瓣中最新电影的影评</em> <a href="http://python.jobbole.com/88325/" target="_blank" rel="external">1</a> </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cj6t8oco20006csuliddr7p0b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cj6ta0q0w000fx4ulxtj8e3ur" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -129,11 +130,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>bs4练习，教程来自<a href="https://zhuanlan.zhihu.com/p/28759710" target="_blank" rel="external">1</a> ：</p>
+<h2 id="1，基于【-】运算符的实例"><a href="#1，基于【-】运算符的实例" class="headerlink" title="1，基于【.】运算符的实例"></a>1，基于【.】运算符的实例</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"> <span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Sun Aug 27 01:16:07 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">链接：</span></div><div class="line"><span class="string">https://zhuanlan.zhihu.com/p/28759710</span></div><div class="line"><span class="string">https://zhuanlan.zhihu.com/p/28760004</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="comment">#用一个简单的html文件为例</span></div><div class="line">html = <span class="string">"""</span></div><div class="line"><span class="string">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse's story in title&lt;/title&gt;&lt;/head&gt;</span></div><div class="line"><span class="string">&lt;body&gt;</span></div><div class="line"><span class="string">&lt;p class="title" name="dromouse"&gt;&lt;b&gt;The Dormouse's story in first p&lt;/b&gt;&lt;/p&gt;</span></div><div class="line"><span class="string">&lt;p class="story"&gt;Once upon a time there were three little sisters; and their names were</span></div><div class="line"><span class="string">&lt;a href="http://example.com/elsie" class="sister" id="link1"&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;,</span></div><div class="line"><span class="string">&lt;a href="http://example.com/lacie" class="sister" id="link2"&gt;Lacie&lt;/a&gt; and</span></div><div class="line"><span class="string">&lt;a href="http://example.com/tillie" class="sister" id="link3"&gt;Tillie&lt;/a&gt;;</span></div><div class="line"><span class="string">and they lived at the bottom of a well.&lt;/p&gt;</span></div><div class="line"><span class="string">&lt;p class="story"&gt;...&lt;/p&gt;</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">soup = BeautifulSoup(html, <span class="string">'lxml'</span>)  <span class="comment">#使用方式，注意anaconda自带lxml，有时候可用http.parse</span></div><div class="line">print(soup.title)                   <span class="comment">#title标签对应的内容</span></div><div class="line">print(type(soup.title))             <span class="comment">#查看得到的格式</span></div><div class="line">print(soup.title.string)            <span class="comment">#抓取该节点的文本内容</span></div><div class="line">print(soup.head)                    <span class="comment">#head标签</span></div><div class="line">print(soup.p)                       <span class="comment">#只匹配第一个p标签的内容</span></div><div class="line">print(soup.p.attrs)                 <span class="comment">#抓取标签属性，返回字典格式</span></div><div class="line">print(soup.p.attrs[<span class="string">'name'</span>])         <span class="comment">#等价于soup.p['name']，类似字典格式的key:value调用</span></div><div class="line">print(soup.p.string)</div><div class="line"></div><div class="line">print(soup.head.title)              <span class="comment">#循环嵌套的使用，这两行结果跟上面soup.title一样，但是逻辑不同</span></div><div class="line">print(soup.head.title.string)</div><div class="line"></div><div class="line">print(soup.p.contents)       <span class="comment">#遍历直接子节点的列表型结果，不包含孙节点</span></div><div class="line"></div><div class="line">print(soup.p.children)       <span class="comment">#直接子节点的生成器类型结果</span></div><div class="line"><span class="keyword">for</span> i, child <span class="keyword">in</span> enumerate(soup.p.children):</div><div class="line">    print(i, child)          <span class="comment">#遍历输出该结果</span></div><div class="line"></div><div class="line">print(soup.p.descendants)    <span class="comment">#子+孙节点的生成器类型结果</span></div><div class="line"><span class="keyword">for</span> i, child <span class="keyword">in</span> enumerate(soup.p.decendants):</div><div class="line">    print(i, child)          <span class="comment">#遍历输出该结果</span></div><div class="line"></div><div class="line">print(soup.a.parent)         <span class="comment">#上级父节点</span></div><div class="line"></div><div class="line">print(type(soup.a.parents))  <span class="comment">#所有上级节点的生成器类型结果</span></div><div class="line">print(list(enumerate(soup.a.parents))) <span class="comment">#遍历输出这些祖先节点内容</span></div><div class="line"></div><div class="line">                             <span class="comment">#所有同级的兄弟节点，当前节点的前后分别是previous和next，同样注意单复数</span></div><div class="line">print(<span class="string">'Next Sibling'</span>, soup.a.next_sibling)</div><div class="line">print(<span class="string">'Prev Sibling'</span>, soup.a.previous_sibling)</div><div class="line">print(<span class="string">'Next Siblings'</span>, list(enumerate(soup.a.next_siblings)))</div><div class="line">print(<span class="string">'Prev Siblings'</span>, list(enumerate(soup.a.previous_siblings)))</div><div class="line"></div><div class="line">                               <span class="comment">#同样用.string .attrs的方式调用对应节点的文本或者属性</span></div></pre></td></tr></table></figure>
+<h2 id="2，基于方法选择器的实例"><a href="#2，基于方法选择器的实例" class="headerlink" title="2，基于方法选择器的实例"></a>2，基于方法选择器的实例</h2><ul>
+<li>使用 <code>find_all()</code> 和 <code>find()</code><br>格式： <code>find_all(name , attrs , recursive , text , **kwargs)</code></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-module-1/" data-id="cj6t8ocmz0000csulwgl3m5vd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-module-1/" data-id="cj6ta0q10000hx4ul8j9qpiss" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -172,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cj6t8ocna0001csulyhp7dp8a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cj6ta0q0v000ex4ulxpf086od" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -218,13 +224,13 @@
 </ul>
 <p><strong>实例学习</strong></p>
 <ul>
-<li>继续实现一些实例，模仿各种代码</li>
+<li>继续实现一些实例，模仿各种代码，比如 <a href="http://hao.jobbole.com/python-scrapy/" target="_blank" rel="external">伯乐在线</a> 的实践项目</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cj6t8ocnd0003csul0qb57qvp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cj6ta0q12000jx4uladruqmi4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -267,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/25/hexo-picture-setting/" data-id="cj6t8ik4g0003vgulh0jdqqsw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/25/hexo-picture-setting/" data-id="cj6ta0q0c0004x4ul6y2y2gte" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/25/email-setting/" data-id="cj6t8ik480001vgulf1sifqsk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/25/email-setting/" data-id="cj6ta0q090003x4uln06mkei8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/23/python2exe/" data-id="cj6t8ik6g0014vgulfalz2gel" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/23/python2exe/" data-id="cj6ta0q15000lx4ulcqj9622b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/23/port-4000-conflict-with-foxit/" data-id="cj6t8ik52000avgul8sl93448" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/23/port-4000-conflict-with-foxit/" data-id="cj6ta0q0q000bx4ulc27na6c5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/21/phd分析-2/" data-id="cj6t8ik59000fvgultdlmbeqy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/21/phd分析-2/" data-id="cj6ta0q0i0007x4ulrbus0h6a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
@@ -490,7 +496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/phd分析/" data-id="cj6t8ik54000dvgul50rbe2xa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/phd分析/" data-id="cj6ta0q0o000ax4ul9ta9vcfz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
