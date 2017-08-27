@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python3-模块学习-2-re | 人生苦短 我选python</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3-模块学习-2-re">
+<meta property="og:url" content="http://yoursite.com/2017/08/28/python-module-2-re/index.html">
+<meta property="og:site_name" content="人生苦短 我选python">
+<meta property="og:description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-27T17:01:58.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3-模块学习-2-re">
+<meta name="twitter:description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+  
+    <link rel="alternate" href="/atom.xml" title="人生苦短 我选python" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">人生苦短 我选python</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">活到老 学到老</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-module-2-re" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/28/python-module-2-re/" class="article-date">
+  <time datetime="2017-08-27T17:00:17.000Z" itemprop="datePublished">2017-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python3-模块学习-2-re
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前学习了crossincode课程的re部门部分，先整理过来：</p>
+<p>1, re.findall(pattern,text)输出符合的结果组成list []<br>2，\b转义符的使用，代表单词两端<br>3，[]代表其中任意匹配均可<br>4，str前的r用于消除转义符<br>5，<br>“.”  换行之外的任意字符（0-1个）<br>“<em>”  代表前面字符的任意数量重复<br>“\S” 空白之外的任意字符（0-1个）<br>“?”  .</em> 和 .<em>? 的区别，一长一短<br>6，.</em>? 和 \S<em><br>7，<br>\d = [0123456789]= =[0-9] -&gt; [a-zA-Z] ： 任意长度数字\d</em> or [0-9]<em>
+</em>号任意数量可以取到0，+号从1开始:    非0的任意长度数字\d+ or [0-9]+<br>使用{n}从任意数量变为固定数量n：     \d{11} or [0-9]{11} 代表11位数字<br>电话号码的匹配: 1\d{10} or 1[0-9]{10}<br>{n}  {n,}  {n,m}  的区别。  其中 ?={0,1}<br>8,<br>\w - 匹配字母或数字或下划线或汉字（3.x版本可以匹配汉字，但2.x版本不可以）<br>\s - 匹配任意的空白符<br>^ - 匹配字符串的开始<br>$ - 匹配字符串的结束         注意与\b的异同<br>\W - 匹配任意不是字母，数字，下划线，汉字的字符<br>\D - 匹配任意非数字的字符<br>\B - 匹配不是单词开头或结束的位置<br>[^abcd]  除abcd以外的任意字符</p>
+<pre><code class="python"><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="string">'''</span>
+<span class="string">Created on Tue Aug 15 23:00:39 2017</span>
+<span class="string">@author: vocaliu</span>
+<span class="string">@version: Anaconda python3.6</span>
+<span class="string">'''</span>
+
+<span class="comment">#例题1</span>
+<span class="keyword">import</span> re
+text = <span class="string">"Hi, I am Shirley Hilton. I am his wife."</span>
+text2 = <span class="string">"site sea sue sweet see case sse ssee loses"</span>
+pattern1 = <span class="string">r"\bs.*?e\b"</span>
+pattern2 = <span class="string">r"\bs\S*e\b"</span>  <span class="comment">#.*? 和 \S*的区别</span>
+m = re.findall(pattern2, text2)
+<span class="keyword">if</span> m:
+    <span class="keyword">print</span> (m)
+<span class="keyword">else</span>:
+    <span class="keyword">print</span> (<span class="string">'not match'</span>)
+
+
+
+<span class="comment">#例题2</span>
+
+<span class="keyword">import</span> re
+text = [<span class="string">'(021)88776543'</span>,<span class="string">'010-55667890'</span>,<span class="string">'02584453362'</span>,<span class="string">'0571 66345673'</span>]
+pattern = <span class="string">r"\(?[0-9]+[\)\-\s]?[0-9]+"</span>            <span class="comment"># ()-等字符都需要转义</span>
+pattern2 = <span class="string">r"\(?0\d{2,3}[) -]?\d{7,8}"</span>           <span class="comment"># 更准确的匹配：首位0，考虑数字的数量</span>
+pattern3 = <span class="string">r"\(0\d{2,3}\)\d{7,8}|0\d{2,3}[ -]?\d{7,8}"</span>  <span class="comment">#使用|匹配有或者没有（）的两种情况</span>
+m = []
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">4</span>):
+    m.append(re.findall(pattern, text[i]))
+    <span class="keyword">if</span> m[i]:
+        <span class="keyword">print</span> (m[i])
+    <span class="keyword">else</span>:
+        <span class="keyword">print</span> (<span class="string">'not match'</span>)
+print(m)
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cj6uzdqeb000iowulxv1o6s78" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/26/python-sample-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python3-实例整理-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 15px;">phd</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python3/" style="font-size: 20px;">python3</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/28/python-module-2-re/">python3-模块学习-2-re</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/python-sample-1/">python3-实例整理-1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/python-module-1-bs4/">python3-模块学习-1-bs4</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/python-basis-1/">python3-基础学习-1</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/26/python-study-plan/">python3综合</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 vocaliu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

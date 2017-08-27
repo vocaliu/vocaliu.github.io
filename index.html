@@ -69,6 +69,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-module-2-re" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/28/python-module-2-re/" class="article-date">
+  <time datetime="2017-08-27T17:00:17.000Z" itemprop="datePublished">2017-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/python-module-2-re/">python3-模块学习-2-re</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前学习了crossincode课程的re部门部分，先整理过来：</p>
+<p>1, re.findall(pattern,text)输出符合的结果组成list []<br>2，\b转义符的使用，代表单词两端<br>3，[]代表其中任意匹配均可<br>4，str前的r用于消除转义符<br>5，<br>“.”  换行之外的任意字符（0-1个）<br>“<em>”  代表前面字符的任意数量重复<br>“\S” 空白之外的任意字符（0-1个）<br>“?”  .</em> 和 .<em>? 的区别，一长一短<br>6，.</em>? 和 \S<em><br>7，<br>\d = [0123456789]= =[0-9] -&gt; [a-zA-Z] ： 任意长度数字\d</em> or [0-9]<em>
+</em>号任意数量可以取到0，+号从1开始:    非0的任意长度数字\d+ or [0-9]+<br>使用{n}从任意数量变为固定数量n：     \d{11} or [0-9]{11} 代表11位数字<br>电话号码的匹配: 1\d{10} or 1[0-9]{10}<br>{n}  {n,}  {n,m}  的区别。  其中 ?={0,1}<br>8,<br>\w - 匹配字母或数字或下划线或汉字（3.x版本可以匹配汉字，但2.x版本不可以）<br>\s - 匹配任意的空白符<br>^ - 匹配字符串的开始<br>$ - 匹配字符串的结束         注意与\b的异同<br>\W - 匹配任意不是字母，数字，下划线，汉字的字符<br>\D - 匹配任意非数字的字符<br>\B - 匹配不是单词开头或结束的位置<br>[^abcd]  除abcd以外的任意字符</p>
+<pre><code class="python"><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="string">'''</span>
+<span class="string">Created on Tue Aug 15 23:00:39 2017</span>
+<span class="string">@author: vocaliu</span>
+<span class="string">@version: Anaconda python3.6</span>
+<span class="string">'''</span>
+
+<span class="comment">#例题1</span>
+<span class="keyword">import</span> re
+text = <span class="string">"Hi, I am Shirley Hilton. I am his wife."</span>
+text2 = <span class="string">"site sea sue sweet see case sse ssee loses"</span>
+pattern1 = <span class="string">r"\bs.*?e\b"</span>
+pattern2 = <span class="string">r"\bs\S*e\b"</span>  <span class="comment">#.*? 和 \S*的区别</span>
+m = re.findall(pattern2, text2)
+<span class="keyword">if</span> m:
+    <span class="keyword">print</span> (m)
+<span class="keyword">else</span>:
+    <span class="keyword">print</span> (<span class="string">'not match'</span>)
+
+
+
+<span class="comment">#例题2</span>
+
+<span class="keyword">import</span> re
+text = [<span class="string">'(021)88776543'</span>,<span class="string">'010-55667890'</span>,<span class="string">'02584453362'</span>,<span class="string">'0571 66345673'</span>]
+pattern = <span class="string">r"\(?[0-9]+[\)\-\s]?[0-9]+"</span>            <span class="comment"># ()-等字符都需要转义</span>
+pattern2 = <span class="string">r"\(?0\d{2,3}[) -]?\d{7,8}"</span>           <span class="comment"># 更准确的匹配：首位0，考虑数字的数量</span>
+pattern3 = <span class="string">r"\(0\d{2,3}\)\d{7,8}|0\d{2,3}[ -]?\d{7,8}"</span>  <span class="comment">#使用|匹配有或者没有（）的两种情况</span>
+m = []
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">4</span>):
+    m.append(re.findall(pattern, text[i]))
+    <span class="keyword">if</span> m[i]:
+        <span class="keyword">print</span> (m[i])
+    <span class="keyword">else</span>:
+        <span class="keyword">print</span> (<span class="string">'not match'</span>)
+print(m)
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cj6uzdqeb000iowulxv1o6s78" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python-sample-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/26/python-sample-1/" class="article-date">
@@ -96,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cj6uz39b3000fwoulpl64gxj9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cj6uzdqej000powul3no8y4g9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -151,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cj6uz39au0006wouloj4dajqb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cj6uzdqed000kowulenevld1w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -190,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cj6uz39bb000lwoulywg7fh7y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cj6uzdqe9000gowulksj137ck" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -242,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cj6uz39b6000gwoulaqdqx0yg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cj6uzdqef000lowulthx6dwyb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
@@ -285,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/25/hexo-picture-setting/" data-id="cj6uz39a90000woul241vki6r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/25/hexo-picture-setting/" data-id="cj6uzdqdp0002owulucsyl9p6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/25/email-setting/" data-id="cj6uz39ae0001woulq3ezu8xm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/25/email-setting/" data-id="cj6uzdqdh0000owuld1aoaou7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/23/python2exe/" data-id="cj6uz39az000cwoulfzgexwcr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/23/python2exe/" data-id="cj6uzdqe5000aowul7nqwo8yy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/23/port-4000-conflict-with-foxit/" data-id="cj6uz39aw0007woulmydfcbvj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/23/port-4000-conflict-with-foxit/" data-id="cj6uzdqe8000eowulj9r7nuxu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -459,56 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/21/phd分析-2/" data-id="cj6uz39br000vwoul3vsr8tc1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-phd分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/20/phd分析/" class="article-date">
-  <time datetime="2017-08-20T05:10:13.000Z" itemprop="datePublished">2017-08-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/20/phd分析/">博士数据分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>参考清华大学的 <a href="http://www.tsinghua.edu.cn/publish/yjsy/698/2010/20101216105103164308914/20101216105103164308914_.html" target="_blank" rel="external">授予学位情况</a> ：</strong><br>    自1978年恢复学位制度至2016年10月，清华大学已授予硕士和博士学位95243人，其中博士学位16496人、硕士学位78747人（含专业硕士学位33826人）。此外，经国务院学位委员会批准，我校授予23人名誉博士学位。</p>
-<p>一、历年授予博士学位情况</p>
-<p><img src="http://www.tsinghua.edu.cn/publish/yjsy/698/20101216105103164308914/1493373961300.jpg" alt=""></p>
-<p><em>最近两年（15、16年）大概是分别1400±50人</em></p>
-<p>二、历年授予硕士学位情况</p>
-<p>三、博士学位获得者在各学科门类的分布情况</p>
-<p><img src="http://www.tsinghua.edu.cn/publish/yjsy/698/20101216105103164308914/1493374104033.jpg" alt=""></p>
-<p><em>工学大概11.5k人，理学大概1.9k人</em></p>
-<p>四、硕士学位获得者在各学科门类的分布情况</p>
-<p>五、专业硕士学位获得者在各专业类别的分布情况</p>
-<p><strong>在此格式上，对已有数据进行类似的整理。</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/phd分析/" data-id="cj6uz39ay000bwouls41454pc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/21/phd分析-2/" data-id="cj6uzdqe6000cowulf0u30lc2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
@@ -523,7 +552,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -546,7 +575,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 20px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python3/" style="font-size: 20px;">python3</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 20px;">爬虫</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 15px;">phd</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python3/" style="font-size: 20px;">python3</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a>
     </div>
   </div>
 
@@ -568,6 +597,10 @@
       <ul>
         
           <li>
+            <a href="/2017/08/28/python-module-2-re/">python3-模块学习-2-re</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/26/python-sample-1/">python3-实例整理-1</a>
           </li>
         
@@ -581,10 +614,6 @@
         
           <li>
             <a href="/2017/08/26/python-study-plan/">python3综合</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/25/hexo-picture-setting/">hexo picture setting</a>
           </li>
         
       </ul>
