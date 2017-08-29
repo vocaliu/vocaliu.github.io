@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="人生苦短 我选python">
 <meta property="og:description" content="urllib和requests练习： 用requests库来索取html内容：requests.get(url)         是response格式（requests.models.Response）requests.get(url).content 是bytes格式；requests.get(url).text    是str格式。 对urllib库而言，request.urlopen(ur">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-28T08:32:23.649Z">
+<meta property="og:updated_time" content="2017-08-28T08:34:42.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3-模块学习-3-urllib和requests">
 <meta name="twitter:description" content="urllib和requests练习： 用requests库来索取html内容：requests.get(url)         是response格式（requests.models.Response）requests.get(url).content 是bytes格式；requests.get(url).text    是str格式。 对urllib库而言，request.urlopen(ur">
@@ -95,12 +95,12 @@
 <p>用requests库来索取html内容：<br>requests.get(url)         是response格式（requests.models.Response）<br>requests.get(url).content 是bytes格式；<br>requests.get(url).text    是str格式。</p>
 <p>对urllib库而言，<br>request.urlopen(url)  是response格式（http.client.HTTPResponse）；<br>request.urlopen(url).read()   是bytes格式<br>request.urlopen(url).read().decode(‘utf-8’)  是str格式</p>
 <p><strong>requests的内容遇到乱码时，在保存时encoding</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">html = requests.get(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">with</span> open(<span class="string">'test.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</div><div class="line">    f.write(html.text)</div></pre></td></tr></table></figure></p>
-<p>参考资料： <a href="http://www.jb51.net/article/112701.htm" target="_blank" rel="external">1</a> </p>
+<p>参考资料： <a href="http://www.cnblogs.com/txw1958/archive/2011/12/21/2295698.html" target="_blank" rel="external">1</a> </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cj6vwour7000gnkuljx5r8zes" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cj6wzfeqk000cv0ulhjufbjyz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li></ul>
