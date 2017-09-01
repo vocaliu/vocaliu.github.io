@@ -5,18 +5,18 @@
   
   <title>python3-模块学习-2-re | 人生苦短 我选python</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+  <meta name="description" content="之前学习了crossincode教程的re部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一短6">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python3-模块学习-2-re">
 <meta property="og:url" content="http://yoursite.com/2017/08/28/python-module-2-re/index.html">
 <meta property="og:site_name" content="人生苦短 我选python">
-<meta property="og:description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+<meta property="og:description" content="之前学习了crossincode教程的re部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一短6">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-29T02:38:24.823Z">
+<meta property="og:updated_time" content="2017-09-01T12:44:51.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3-模块学习-2-re">
-<meta name="twitter:description" content="之前学习了crossincode课程的re部门部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一">
+<meta name="twitter:description" content="之前学习了crossincode教程的re部分，先整理过来： 1, re.findall(pattern,text)输出符合的结果组成list []2，\b转义符的使用，代表单词两端3，[]代表其中任意匹配均可4，str前的r用于消除转义符5，“.”  换行之外的任意字符（0-1个）“”  代表前面字符的任意数量重复“\S” 空白之外的任意字符（0-1个）“?”  . 和 .? 的区别，一长一短6">
   
     <link rel="alternate" href="/atom.xml" title="人生苦短 我选python" type="application/atom+xml">
   
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前学习了crossincode课程的re部门部分，先整理过来：</p>
+        <p>之前学习了crossincode教程的re部分，先整理过来：</p>
 <p>1, re.findall(pattern,text)输出符合的结果组成list []<br>2，\b转义符的使用，代表单词两端<br>3，[]代表其中任意匹配均可<br>4，str前的r用于消除转义符<br>5，<br>“.”  换行之外的任意字符（0-1个）<br>“<em>”  代表前面字符的任意数量重复<br>“\S” 空白之外的任意字符（0-1个）<br>“?”  .</em> 和 .<em>? 的区别，一长一短<br>6，.</em>? 和 \S<em><br>7，<br>\d = [0123456789]= =[0-9] -&gt; [a-zA-Z] ： 任意长度数字\d</em> or [0-9]<em>
 </em>号任意数量可以取到0，+号从1开始:    非0的任意长度数字\d+ or [0-9]+<br>使用{n}从任意数量变为固定数量n：     \d{11} or [0-9]{11} 代表11位数字<br>电话号码的匹配: 1\d{10} or 1[0-9]{10}<br>{n}  {n,}  {n,m}  的区别。  其中 ?={0,1}<br>8,<br>\w - 匹配字母或数字或下划线或汉字（3.x版本可以匹配汉字，但2.x版本不可以）<br>\s - 匹配任意的空白符<br>^ - 匹配字符串的开始<br>$ - 匹配字符串的结束         注意与\b的异同<br>\W - 匹配任意不是字母，数字，下划线，汉字的字符<br>\D - 匹配任意非数字的字符<br>\B - 匹配不是单词开头或结束的位置<br>[^abcd]  除abcd以外的任意字符</p>
 <pre><code class="python"><span class="comment"># -*- coding: utf-8 -*-</span>
@@ -135,7 +135,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cj71uwzfq000et8ulcw08go11" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cj71vixop000n7sulr1ir047z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
