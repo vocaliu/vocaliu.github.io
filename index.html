@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pandas-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/pandas-1/" class="article-date">
+  <time datetime="2018-10-31T11:43:11.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/pandas-1/">pandas-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong≯����ѧϰpandas��ֻ�Ǵ�һ�ϲ�ͨ��ʼ�á�</strong></p>
+<p>##1����������˵������pandas��html���д�����ֱ�ӻ�ȡ����table���ݡ�<br>ʾ��������ץ˫ɫ����ʷ��¼��ͨ��read_html���ø���table����ʹ��to_csvд��csv�ļ������ں���������</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Mon Oct 22 19:48:30 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">https://www.makcyun.top/web_scraping_withpython2.html</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">179</span>):  <span class="comment"># ��ȡȫ��178ҳ����</span></div><div class="line">	url = <span class="string">'http://s.askci.com/stock/a/?reportTime=2017-12-31&amp;pageNum=%s'</span> % (str(i))</div><div class="line">	tb = pd.read_html(url)[<span class="number">3</span>] <span class="comment">#���۲췢��������������ҳ�е�4�����񣬹�Ϊ[3]</span></div><div class="line">	tb.to_csv(<span class="string">r'stockall.csv'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf_8_sig'</span>, header=<span class="number">1</span>, index=<span class="number">0</span>)</div><div class="line">	print(<span class="string">'��'</span>+str(i)+<span class="string">'ҳץȡ����'</span>)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx3nrxm00091oulve8ifgyt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-pandas/">python pandas</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-phd分析-sjtu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/07/phd分析-sjtu/" class="article-date">
@@ -1245,7 +1285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cj7amiffr000avsul31z9uxg1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cjnx3nrxq000a1oul9s6jkl1k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
@@ -1317,7 +1357,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cj7amifg6000mvsulfwo6jo3o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cjnx3nryg000x1oulc0huyms0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1360,7 +1400,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cj7amifg6000kvsulg00jpn0k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cjnx3nrya000p1oul52t0t5op" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1402,7 +1442,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cj7amifh10017vsulb85qinhl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cjnx3nryx001a1oulf4de4lgx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1478,7 +1518,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cj7amifg6000ivsulz3pwxqeg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cjnx3nry0000j1oulhgsmoone" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1523,7 +1563,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cj7amifg6000ovsulajvrrgal" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cjnx3nryd000r1oul6ebso6b7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1578,7 +1618,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cj7amifg6000gvsulqe1aksww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cjnx3nry3000l1oulbqzf9c87" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1617,7 +1657,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cj7amiffr000fvsulbjsxt7sk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cjnx3nrxy000i1oulb914bbjd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1669,52 +1709,11 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cj7amifg6000qvsul25r9fmqq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cjnx3nry4000n1oul2qcvk4w9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-picture-setting" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/25/hexo-picture-setting/" class="article-date">
-  <time datetime="2017-08-25T04:20:37.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/hexo-picture-setting/">hexo picture setting</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>来自 <a href="http://www.jianshu.com/p/5bdec208faf0" target="_blank" rel="external">hexo使用新浪微博图床自动部署</a></p>
-<p>部署图床的部分先不管，提到<br><code>markdown格式的image_url,其中image_url的格式应为&#39;/img/xxx.jpg&#39;,位于source/img下</code></p>
-<p>测试了都不行。</p>
-<p> <img src="./img/code.jpg" alt=""></p>
-<p> <img src="/img/code.jpg" alt=""></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/25/hexo-picture-setting/" data-id="cj7amiffr0005vsullx2r0aod" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -1738,7 +1737,7 @@ print(m)
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pandas/">python pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
   </div>
 
@@ -1748,7 +1747,7 @@ print(m)
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-pandas/" style="font-size: 10px;">python pandas</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
     </div>
   </div>
 
@@ -1757,7 +1756,7 @@ print(m)
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
     </div>
   </div>
 
@@ -1768,6 +1767,10 @@ print(m)
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/31/pandas-1/">pandas-1</a>
+          </li>
         
           <li>
             <a href="/2017/09/07/phd分析-sjtu/">phd分析-上海交通大学</a>
@@ -1785,10 +1788,6 @@ print(m)
             <a href="/2017/08/28/wifisetting/">wifisetting</a>
           </li>
         
-          <li>
-            <a href="/2017/08/28/python-module-2-re/">python3-模块学习-2-re</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1801,7 +1800,7 @@ print(m)
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 vocaliu<br>
+      &copy; 2018 vocaliu<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

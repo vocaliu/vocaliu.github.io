@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python爬虫-meizitu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/19/python爬虫-meizitu/" class="article-date">
+  <time datetime="2017-08-19T12:37:53.000Z" itemprop="datePublished">2017-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/19/python爬虫-meizitu/">python爬虫-meizitu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Sun Aug 13 00:47:22 2017</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">@version:Anaconda python3.6</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    head = &#123; <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36'</span>,  </div><div class="line">             <span class="string">'Referer'</span>: <span class="string">'http://www.meizitu.com'</span>,  </div><div class="line">             &#125;                                         <span class="comment">#伪装浏览器登陆</span></div><div class="line">    request = urllib.request.Request(url,headers=head) <span class="comment">#构建请求</span></div><div class="line">    response = urllib.request.urlopen(request,timeout=<span class="number">10</span>)</div><div class="line">    data = response.read()                             <span class="comment">#获得服务器响应并读取链接内容（网页、图片或其他）</span></div><div class="line">    <span class="keyword">return</span> data                                        <span class="comment">#返回值就是链接中的具体内容</span></div><div class="line">        </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">imgdownload_num</span><span class="params">(startnum,stopnum)</span>:</span></div><div class="line">    <span class="keyword">for</span> szwz <span class="keyword">in</span> range(startnum,stopnum):               <span class="comment">#这个数字不断变化来抓不同链接</span></div><div class="line">        url = url0 + str(szwz) + <span class="string">'.html'</span>               <span class="comment">#合并网址</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz)):   <span class="comment">#如果不存在与网址一样的文件夹</span></div><div class="line">            os.mkdir(<span class="string">'F:\pic\&#123;&#125;'</span>.format(szwz))             <span class="comment">#新建与网址一样的文件夹</span></div><div class="line">        wronglink = <span class="number">0</span></div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            html = download_page(url)                  <span class="comment">#在这里做一轮try except，防止遇到错误的抓取页面导致的报错</span></div><div class="line">            regx = <span class="string">r'http://[\S]*/[0-9]&#123;2&#125;\.jpg'</span>       <span class="comment">#通过正则配对，得到页面中的jpg图片链接</span></div><div class="line">            pattern = re.compile(regx)                 <span class="comment">#re.compile() 可以把正则表达式编译成一个正则表达式对象.</span></div><div class="line">            img_link = re.findall(pattern,repr(html))  <span class="comment">#repr的作用参考http://www.cnpythoner.com/post/251.html</span></div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            wronglink += <span class="number">1</span></div><div class="line">            print(<span class="string">'发现第&#123;&#125;个错误的抓取网址'</span>.format(wronglink))<span class="comment">#设置时会里有一些指向404页面的网址</span></div><div class="line">            <span class="keyword">break</span></div><div class="line">        num = <span class="number">1</span></div><div class="line">        wrongpiclink = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> img <span class="keyword">in</span> img_link:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                image = download_page(img)             <span class="comment">#将每个img_link链接中的图片都读取出来，并保存成下面的本地链接</span></div><div class="line">                <span class="keyword">if</span> len(image) &gt; <span class="number">4000</span>:                 <span class="comment">#残留代码，通过筛选文件大小去掉不相关的缩略图</span></div><div class="line">                    <span class="keyword">with</span> open(<span class="string">'F:\pic\&#123;&#125;\&#123;&#125;.jpg'</span>.format(szwz,num),<span class="string">'wb'</span>) <span class="keyword">as</span> fp:</div><div class="line">                        fp.write(image)</div><div class="line">                        print(<span class="string">'pic&#123;&#125;-&#123;&#125; downloaded from &#123;&#125;'</span>.format(szwz,num,img))</div><div class="line">                        num += <span class="number">1</span></div><div class="line">                        time.sleep(<span class="number">0.6</span>)</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">            <span class="keyword">except</span>:</div><div class="line">                wrongpiclink += <span class="number">1</span></div><div class="line">                print(<span class="string">'发现第&#123;&#125;个错误的图片链接 ---&gt; &#123;&#125;'</span>.format(wrongpiclink,img))<span class="comment">#源文件里有一些指向404页面的图片</span></div><div class="line">    <span class="keyword">return</span></div><div class="line"></div><div class="line">url0 = <span class="string">'http://www.meizitu.com/a/'</span></div><div class="line"><span class="comment"># 开始多进程同时爬，改自 https://www.liaoxuefeng.com/ python3的多进程部分</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'Parent process %s.'</span> % os.getpid())</div><div class="line">    p = Pool(<span class="number">8</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</div><div class="line">        p.apply_async(imgdownload_num, args=(i*<span class="number">8</span>+<span class="number">1</span>,i*<span class="number">8</span>+<span class="number">100</span>))</div><div class="line">    p.close()</div><div class="line">    p.join()</div><div class="line">    print(<span class="string">'All subprocesses done.'</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/19/python爬虫-meizitu/" data-id="cjnx3nryf000v1oulrzxoey80" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mdstudy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/19/mdstudy/" class="article-date">
@@ -138,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cj7amiffr0007vsulz41onxg8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/mdstudy/" data-id="cjnx3nrxd00041oul24jrbq9u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
@@ -249,7 +288,7 @@
 <h2 id="关于收费"><a href="#关于收费" class="headerlink" title="关于收费"></a>关于收费</h2><p><strong>马克飞象</strong>为新用户提供 10 天的试用期，试用期过后需要<a href="maxiang.info/vip.html">续费</a>才能继续使用。未购买或者未及时续费，将不能同步新的笔记。之前保存过的笔记依然可以编辑。</p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2788354117" target="_blank" rel="external">@马克飞象</a>，<a href="http://weibo.com/ggock" title="开发者个人账号" target="_blank" rel="external">@GGock</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#104;&#117;&#115;&#116;&#103;&#111;&#99;&#x6b;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#104;&#117;&#115;&#116;&#103;&#111;&#99;&#x6b;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#x68;&#117;&#x73;&#116;&#103;&#111;&#99;&#x6b;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#x68;&#117;&#x73;&#116;&#103;&#111;&#99;&#x6b;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></li>
 </ul>
 <hr>
 <p>感谢阅读这份帮助文档。请点击右上角，绑定印象笔记账号，开启全新的记录与分享体验吧。</p>
@@ -258,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cj7amiffb0004vsulryyecues" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/md-editor-intro-maxiang/" data-id="cjnx3nrxa00031oul86x18lvd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cj7amifgm0015vsul1ptn5lq8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testmarkdown/" data-id="cjnx3nryu00181oul5ip5zuyw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -325,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cj7amifgm0013vsulfu9dwerv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/19/testchinese1/" data-id="cjnx3nryt00161oulvmzfnqxz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -370,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/18/hello-world/" data-id="cj7amiffb0003vsulh9uv04sl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/18/hello-world/" data-id="cjnx3nrxj00081oul3n31ydrc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +435,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pandas/">python pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
   </div>
 
@@ -406,7 +445,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-pandas/" style="font-size: 10px;">python pandas</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
     </div>
   </div>
 
@@ -415,7 +454,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
     </div>
   </div>
 
@@ -426,6 +465,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/31/pandas-1/">pandas-1</a>
+          </li>
         
           <li>
             <a href="/2017/09/07/phd分析-sjtu/">phd分析-上海交通大学</a>
@@ -443,10 +486,6 @@
             <a href="/2017/08/28/wifisetting/">wifisetting</a>
           </li>
         
-          <li>
-            <a href="/2017/08/28/python-module-2-re/">python3-模块学习-2-re</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -459,7 +498,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 vocaliu<br>
+      &copy; 2018 vocaliu<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
