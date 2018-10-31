@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-csv-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/csv-1/" class="article-date">
+  <time datetime="2018-10-31T13:01:45.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/csv-1/">csv-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用csv读写的方式，对下载的njuphddata进行汇总。<br>直接读取对应内容，不需要原来那么复杂的正则。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Thu Oct 25 21:25:24 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">基于csv的读写，将两年多的数据汇总。</span></div><div class="line"><span class="string">读写的写法参考</span></div><div class="line"><span class="string">https://www.cnblogs.com/liujinhong/p/5937527.html</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> csv</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">csv_to_list</span><span class="params">(num)</span>:</span>  <span class="comment">#将各个csv中有价值的数据逐一整理成一个list</span></div><div class="line">    csv_file = csv.reader(open(<span class="string">r'F:\phddbjl\nju\csv\&#123;&#125;.csv'</span>.format(num), encoding=<span class="string">'utf-8'</span>))</div><div class="line">    n1=[]</div><div class="line">    n2=[]</div><div class="line">    n3=[]</div><div class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> csv_file:</div><div class="line">        n1.append(row[<span class="number">1</span>])</div><div class="line">        n2.append(row[<span class="number">2</span>])</div><div class="line">        n3.append(row[<span class="number">3</span>])</div><div class="line">    <span class="comment"># n1到n3这3个list的第9-13项是5个老师的职称和单位</span></div><div class="line">    m=[]  <span class="comment">#在m里构造（其中答辩委员会信息附在后面）</span></div><div class="line">    m.append(num)</div><div class="line">    <span class="keyword">for</span> i1 <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>):</div><div class="line">        m.append(n1[i1])</div><div class="line">    <span class="keyword">for</span> i2 <span class="keyword">in</span> range(<span class="number">14</span>,<span class="number">16</span>):</div><div class="line">        m.append(n1[i2])</div><div class="line">    <span class="keyword">for</span> i3 <span class="keyword">in</span> range(<span class="number">8</span>,<span class="number">13</span>):</div><div class="line">        m.append(n1[i3])</div><div class="line">        m.append(n2[i3])</div><div class="line">        m.append(n3[i3])</div><div class="line">    <span class="keyword">return</span> m</div><div class="line"></div><div class="line"><span class="comment">#    print(csv_to_list(7513))</span></div><div class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">7513</span>,<span class="number">9488</span>):</div><div class="line">    <span class="keyword">with</span> open(<span class="string">r'F:\phddbjl\nju\alldata.csv'</span>, <span class="string">'a'</span>, newline=<span class="string">''</span>) <span class="keyword">as</span> out:</div><div class="line">        csv_writer = csv.writer(out, dialect=<span class="string">'excel'</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            csv_writer.writerow(csv_to_list(num))</div><div class="line">            <span class="keyword">print</span> (<span class="string">"&#123;&#125;-done"</span>.format(num))</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            <span class="keyword">print</span> (<span class="string">"&#123;&#125;-none"</span>.format(num))</div><div class="line">            <span class="keyword">continue</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/csv-1/" data-id="cjnx69p8m0000rgulv1tnssd4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-csv/">python csv</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pandas-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/31/pandas-1/" class="article-date">
@@ -100,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx5q9fm00098suldmulumfr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx69p9q0009rgul7p4iban2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-pandas/">python pandas</a></li></ul>
@@ -1288,7 +1327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cjnx5q9fn000a8sulpshkxumw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cjnx69pa3000drgulv8ke4wt6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
@@ -1360,7 +1399,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cjnx5q9fy000l8sulnmxvtcaj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cjnx69pb3000srgulv18738zt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1403,7 +1442,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cjnx5q9g0000n8sulnsqcx70r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cjnx69pb0000qrguldapqu4b8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1445,7 +1484,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cjnx5q9gj001a8sulprjnqd7z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cjnx69pc00017rgul0gspvnx6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1521,7 +1560,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cjnx5q9fu000h8sulblthdq6r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cjnx69pan000mrgulxbkfa458" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1566,7 +1605,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cjnx5q9g4000r8sulnv8e5vgp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cjnx69pb4000urgul5u1vmchk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1621,7 +1660,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cjnx5q9g2000p8sulhrwyyd60" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cjnx69paq000orgul371rmqrd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1660,59 +1699,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cjnx5q9fv000j8sulnz5vtjv3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-study-plan" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/26/python-study-plan/" class="article-date">
-  <time datetime="2017-08-26T11:14:27.000Z" itemprop="datePublished">2017-08-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/26/python-study-plan/">python3综合</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前面仿着写成了几个程序，但在自己做题时感觉还是要加强一点基础，省的几乎每一个命令都要去搜索。<br>划分以下几部分进行后续学习：<br><strong>基础学习</strong></p>
-<ul>
-<li>将大致看过的crossin、liaoxuefeng以及runoob的python教程分别再整体过一遍。</li>
-<li>将 python3.6的官方教程 <a href="http://www.pythondoc.com/" target="_blank" rel="external">中文版</a> 和 <a href="https://docs.python.org/3/" target="_blank" rel="external">英文版</a> 整体过一遍</li>
-<li>将Hitchhiker的 <a href="http://docs.python-guide.org/en/latest/" target="_blank" rel="external">python-guide</a> 整体过一遍<br>先过中文再过英文，几种走一遍加强认识。</li>
-</ul>
-<p><strong>模块学习</strong></p>
-<ul>
-<li><a href="https://pymotw.com/3/" target="_blank" rel="external">Python 3 Module of the Week</a></li>
-</ul>
-<p><strong>实例学习</strong></p>
-<ul>
-<li>继续实现一些实例，模仿各种代码，比如 <a href="http://hao.jobbole.com/python-scrapy/" target="_blank" rel="external">伯乐在线</a> 的实践项目</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cjnx5q9g5000t8sul0isb4ec2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cjnx69pal000krguljlr72xwy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1740,7 +1727,7 @@ print(m)
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pandas/">python pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phd/">phd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-csv/">python csv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-pandas/">python pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
   </div>
 
@@ -1750,7 +1737,7 @@ print(m)
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-pandas/" style="font-size: 10px;">python pandas</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
+      <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/phd/" style="font-size: 16.67px;">phd</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python-csv/" style="font-size: 10px;">python csv</a> <a href="/tags/python-pandas/" style="font-size: 10px;">python pandas</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/爬虫/" style="font-size: 13.33px;">爬虫</a>
     </div>
   </div>
 
@@ -1772,6 +1759,10 @@ print(m)
       <ul>
         
           <li>
+            <a href="/2018/10/31/csv-1/">csv-1</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/31/pandas-1/">pandas-1</a>
           </li>
         
@@ -1785,10 +1776,6 @@ print(m)
         
           <li>
             <a href="/2017/08/28/python-module-3-html/">python3-模块学习-3-urllib和requests</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/28/wifisetting/">wifisetting</a>
           </li>
         
       </ul>
