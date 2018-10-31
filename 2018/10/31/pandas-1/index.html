@@ -5,18 +5,18 @@
   
   <title>pandas-1 | 人生苦短 我选python</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="̸����ѧϰpandas��ֻ�Ǵ�һ�ϲ�ͨ��ʼ�á� ##1����������˵������pandas��html���д�����ֱ�ӻ�ȡ����table���ݡ�ʾ��������ץ˫ɫ����ʷ��¼��ͨ��read_html���ø���table����ʹ��to_csvд��csv�ļ������ں��������� 123456789101112131415# -*">
+  <meta name="description" content="谈不上学习pandas，只是从一窍不通开始用。 ##1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。示例程序是抓双色球历史记录。通过read_html获得各个table，再使用to_csv写入csv文件，用于后续处理。 123456789101112131415# -*- coding: utf-8 -*-&quot;&quot;&quot;Created on Mon Oct 22 19:48">
 <meta name="keywords" content="python pandas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pandas-1">
 <meta property="og:url" content="http://yoursite.com/2018/10/31/pandas-1/index.html">
 <meta property="og:site_name" content="人生苦短 我选python">
-<meta property="og:description" content="̸����ѧϰpandas��ֻ�Ǵ�һ�ϲ�ͨ��ʼ�á� ##1����������˵������pandas��html���д�����ֱ�ӻ�ȡ����table���ݡ�ʾ��������ץ˫ɫ����ʷ��¼��ͨ��read_html���ø���table����ʹ��to_csvд��csv�ļ������ں��������� 123456789101112131415# -*">
+<meta property="og:description" content="谈不上学习pandas，只是从一窍不通开始用。 ##1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。示例程序是抓双色球历史记录。通过read_html获得各个table，再使用to_csv写入csv文件，用于后续处理。 123456789101112131415# -*- coding: utf-8 -*-&quot;&quot;&quot;Created on Mon Oct 22 19:48">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-31T11:50:28.243Z">
+<meta property="og:updated_time" content="2018-10-31T11:54:09.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas-1">
-<meta name="twitter:description" content="̸����ѧϰpandas��ֻ�Ǵ�һ�ϲ�ͨ��ʼ�á� ##1����������˵������pandas��html���д�����ֱ�ӻ�ȡ����table���ݡ�ʾ��������ץ˫ɫ����ʷ��¼��ͨ��read_html���ø���table����ʹ��to_csvд��csv�ļ������ں��������� 123456789101112131415# -*">
+<meta name="twitter:description" content="谈不上学习pandas，只是从一窍不通开始用。 ##1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。示例程序是抓双色球历史记录。通过read_html获得各个table，再使用to_csv写入csv文件，用于后续处理。 123456789101112131415# -*- coding: utf-8 -*-&quot;&quot;&quot;Created on Mon Oct 22 19:48">
   
     <link rel="alternate" href="/atom.xml" title="人生苦短 我选python" type="application/atom+xml">
   
@@ -91,13 +91,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong≯����ѧϰpandas��ֻ�Ǵ�һ�ϲ�ͨ��ʼ�á�</strong></p>
-<p>##1����������˵������pandas��html���д�����ֱ�ӻ�ȡ����table���ݡ�<br>ʾ��������ץ˫ɫ����ʷ��¼��ͨ��read_html���ø���table����ʹ��to_csvд��csv�ļ������ں���������</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Mon Oct 22 19:48:30 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">https://www.makcyun.top/web_scraping_withpython2.html</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">179</span>):  <span class="comment"># ��ȡȫ��178ҳ����</span></div><div class="line">	url = <span class="string">'http://s.askci.com/stock/a/?reportTime=2017-12-31&amp;pageNum=%s'</span> % (str(i))</div><div class="line">	tb = pd.read_html(url)[<span class="number">3</span>] <span class="comment">#���۲췢��������������ҳ�е�4�����񣬹�Ϊ[3]</span></div><div class="line">	tb.to_csv(<span class="string">r'stockall.csv'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf_8_sig'</span>, header=<span class="number">1</span>, index=<span class="number">0</span>)</div><div class="line">	print(<span class="string">'��'</span>+str(i)+<span class="string">'ҳץȡ����'</span>)</div></pre></td></tr></table></figure>
+        <p><strong>谈不上学习pandas，只是从一窍不通开始用。</strong></p>
+<p>##1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。<br>示例程序是抓双色球历史记录。通过read_html获得各个table，再使用to_csv写入csv文件，用于后续处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Mon Oct 22 19:48:30 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">https://www.makcyun.top/web_scraping_withpython2.html</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">179</span>):  <span class="comment"># 爬取全部178页数据</span></div><div class="line">	url = <span class="string">'http://s.askci.com/stock/a/?reportTime=2017-12-31&amp;pageNum=%s'</span> % (str(i))</div><div class="line">	tb = pd.read_html(url)[<span class="number">3</span>] <span class="comment">#经观察发现所需表格是网页中第4个表格，故为[3]</span></div><div class="line">	tb.to_csv(<span class="string">r'stockall.csv'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf_8_sig'</span>, header=<span class="number">1</span>, index=<span class="number">0</span>)</div><div class="line">	print(<span class="string">'第'</span>+str(i)+<span class="string">'页抓取完成'</span>)</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx3nrxm00091oulve8ifgyt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx3phto0008jwulgf7qksq0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-pandas/">python pandas</a></li></ul>
