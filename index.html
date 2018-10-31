@@ -92,12 +92,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>谈不上学习pandas，只是从一窍不通开始用。</strong></p>
-<h2 id="1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。"><a href="#1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。" class="headerlink" title="1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。"></a>1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。</h2><p><em>示例程序是抓双色球历史记录。通过read_html获得各个table，再使用to_csv写入csv文件，用于后续处理。</em></p>
+<h2 id="1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。"><a href="#1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。" class="headerlink" title="1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。"></a>1，看到文章说可以用pandas对html进行处理，直接获取其中table数据。</h2><p><em>示例程序1，抓上市公司相关记录。通过read_html获得各个table，再使用to_csv写入csv文件。</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Mon Oct 22 19:48:30 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">https://www.makcyun.top/web_scraping_withpython2.html</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">179</span>):  <span class="comment"># 爬取全部178页数据</span></div><div class="line">	url = <span class="string">'http://s.askci.com/stock/a/?reportTime=2017-12-31&amp;pageNum=%s'</span> % (str(i))</div><div class="line">	tb = pd.read_html(url)[<span class="number">3</span>] <span class="comment">#经观察发现所需表格是网页中第4个表格，故为[3]</span></div><div class="line">	tb.to_csv(<span class="string">r'stockall.csv'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf_8_sig'</span>, header=<span class="number">1</span>, index=<span class="number">0</span>)</div><div class="line">	print(<span class="string">'第'</span>+str(i)+<span class="string">'页抓取完成'</span>)</div></pre></td></tr></table></figure>
+<p><em>示例程序2，抓双色球历史记录。引入另一种csv读写操作方式：csv模块</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">Created on Wed Oct 24 15:11:34 2018</span></div><div class="line"><span class="string">@author: vocaliu</span></div><div class="line"><span class="string">Python 3.6.1 :: Anaconda 4.4.0 (64-bit) @ win10x64</span></div><div class="line"><span class="string">在stock那个基础上，练习pandas抓网页的表单数据倒入csv表单，这次是抓双色球，并增加一步csv模块的操作。</span></div><div class="line"><span class="string">https://blog.csdn.net/wwivywwivy/article/details/81810067</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> csv</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_one_page</span><span class="params">(page)</span>:</span></div><div class="line">    url = <span class="string">'http://kaijiang.zhcw.com/zhcw/html/ssq/list_%s.html'</span> % (str(page))</div><div class="line">    tb = pd.read_html(url, skiprows=[<span class="number">0</span>, <span class="number">1</span>])[<span class="number">0</span>]  <span class="comment"># 跳过前两行</span></div><div class="line">    <span class="keyword">return</span> tb.drop([len(tb)<span class="number">-1</span>])  <span class="comment"># 去掉最后一行</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">with</span> open(<span class="string">r'f:\ssq.csv'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8-sig'</span>, newline=<span class="string">''</span>) <span class="keyword">as</span> f:</div><div class="line">    csv.writer(f).writerow([<span class="string">'开奖日期'</span>, <span class="string">'期号'</span>, <span class="string">'中奖号码'</span>, <span class="string">'销售额(元)'</span>, <span class="string">'中奖注数一等奖'</span>, <span class="string">'中奖注数二等奖'</span>, <span class="string">'详细'</span>])</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">118</span>):  <span class="comment"># 目前117页数据</span></div><div class="line">    get_one_page(i).to_csv(<span class="string">r'f:\ssq.csv'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf_8_sig'</span>, header=<span class="number">0</span>, index=<span class="number">0</span>)</div><div class="line">    print(<span class="string">'第'</span>+str(i)+<span class="string">'页抓取完成'</span>)</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx47hu50008h4ulz07mg8uw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/pandas-1/" data-id="cjnx5q9fm00098suldmulumfr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-pandas/">python pandas</a></li></ul>
@@ -1285,7 +1288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cjnx47hua000bh4ullumoagul" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/07/phd分析-sjtu/" data-id="cjnx5q9fn000a8sulpshkxumw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phd/">phd</a></li></ul>
@@ -1357,7 +1360,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cjnx47hur000oh4ulcr34l2uy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/31/python-reprint-1/" data-id="cjnx5q9fy000l8sulnmxvtcaj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1400,7 +1403,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cjnx47hun000mh4ulj4uedu0p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-3-html/" data-id="cjnx5q9g0000n8sulnsqcx70r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1442,7 +1445,7 @@ req = requests.Session()</code><br>从刚刚登陆时保存了的‘wd’里面�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cjnx47hv70014h4ult3ir9wfr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/wifisetting/" data-id="cjnx5q9gj001a8sulprjnqd7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1518,7 +1521,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cjnx47huk000kh4ulg5ohe8yt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/28/python-module-2-re/" data-id="cjnx5q9fu000h8sulblthdq6r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1563,7 +1566,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cjnx47huu000qh4ullpii7nfm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-sample-1/" data-id="cjnx5q9g4000r8sulnv8e5vgp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1618,7 +1621,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cjnx47hui000ih4ullmc8pf9b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-module-1-bs4/" data-id="cjnx5q9g2000p8sulhrwyyd60" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1657,7 +1660,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cjnx47hud000fh4ulgshb8n3j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-basis-1/" data-id="cjnx5q9fv000j8sulnz5vtjv3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -1709,7 +1712,7 @@ print(m)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cjnx47huv000sh4ul6wt3j8g8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/26/python-study-plan/" data-id="cjnx5q9g5000t8sul0isb4ec2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
